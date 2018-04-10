@@ -1,0 +1,30 @@
+.article-item-container {
+    /* border: 1px solid black; */
+    height: 15vh;
+    /* padding-left: 1.5vw; */
+    /* padding-top: 2vh; */
+    border-bottom: 1px solid black;
+    width: 22.9vw;
+}
+
+.article-item-container > * {
+    /* border: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+}
+
+.article-item-img-container {
+    /* margin-left: 1vw; */
+}
+
+.article-item-img-container {
+    background-color: gray;
+}
+
+div.article-item-container.row {
+    margin-left: 0;
+    /* margin-right: 0; */
+}
+
+.article-item-img-container, .article-item-text-container {
+    height: 100%;
+}

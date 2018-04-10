@@ -1,0 +1,10 @@
+.carousel {
+    margin-bottom: 6vh;
+}
+
+.carousel-item img {
+    width: 55vw;
+    height: auto;
+    margin: 0 auto;
+    /* margin-bottom: 5vh; */
+}
