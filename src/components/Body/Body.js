@@ -17,7 +17,7 @@ class Body extends Component {
     }
 
     render() {
-        const { state, onElementClick } = this.props;
+        const { onElementClick } = this.props;
         return (
             <div onMouseEnter={onElementClick} className='body-container col-7'>
                 {/* <Home /> */}
