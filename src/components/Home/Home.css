@@ -11,7 +11,8 @@
 .home-title-container {
     /* font-size: 10vw; */
     margin-top: 1vw;
-    background-color: rgba(3, 126, 199, 0.8);
+    /* background-color: rgba(3, 126, 199, 0.8); */
+    background-color: white;
     /* margin-left: 18.5vw; */
     text-align: center;
     width: 97%;
@@ -23,7 +24,7 @@
 }
 
 .home-container > * {
-    color: white;
+    color: black;
 }
 
 .home-title-container > p {
@@ -34,12 +35,12 @@
     width: 8vw;
     height: auto;
     font-size: 2.5vh;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 160, 255, 0.8);
     color: black;
     margin-bottom: 2vh;
 }
 
 .home-sign-up-btn:hover {
-    background-color: rgba(3, 126, 199, 0.8);
+    background-color: rgba(0, 115, 182, 1);
     color: white;
 }
