@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Body.css';
-import Home from '../Home/Home';
+import Register from '../Register/Register';
+// import Home from '../Home/Home';
+
 
 class Body extends Component {
     constructor(props) {
@@ -18,7 +20,8 @@ class Body extends Component {
         const { state, onElementClick } = this.props;
         return (
             <div onMouseEnter={onElementClick} className='body-container col-7'>
-                <Home />
+                {/* <Home /> */}
+                <Register />
             </div>
         )
     }
