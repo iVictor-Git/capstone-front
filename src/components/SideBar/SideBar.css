@@ -1,16 +1,9 @@
 .side-bar-container {
-    /* border: 1px solid black; */
-    /* padding-left: 2vw; */
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
-    height: 98vh;
-    float: left;
 }
 
 .side-bar-log-reg {
-    /* padding-right: 0; */
-    /* margin-left: 2vw; */
 }
 
 .div.side-bar-container.col-3 {
@@ -18,10 +11,10 @@
 }
 
 .side-bar-log-reg button{
-    height: 7vh;
+    height: 3.5vw;
     /* width: auto;; */
     font-size: 1.1vw;
-    margin-top: 2.25vh;
+    margin-top: 1.75vw;
     background-color: rgba(0, 160, 255, 0.8);
 }
 
