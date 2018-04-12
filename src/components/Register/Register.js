@@ -7,6 +7,8 @@ import PhoneInput from '../PhoneInput/PhoneInput';
 import EmailInput from '../EmailInput/EmailInput';
 import PasswordInput from '../PasswordInput/PasswordInput';
 import TermInput from '../TermInput/TermInput';
+import { errorsInitialState } from '../../const/const';
+import validator from 'validator';
 
 class Register extends Component {
     constructor(props) {
@@ -25,26 +27,125 @@ class Register extends Component {
             password: '',
             verify: '',
             agree: false,
+            errors: errorsInitialState,
+            isValidForm: false,
+        }
+
+
+    }
+    setError = (errors, name, error) => {
+        errors[name].isNotValid = true;
+        errors[name].message = `${errors[name].field} ${error}`;
+    }
+    resetError = (errors, name) => {
+        errors[name].isNotValid = false;
+        errors[name].message = ``;
+    }
+
+    validateForm = () => {
+        let isValid = true;
+        for (const key in this.state.errors) {
+            if (this.state.errors[key].isNotValid) {
+                isValid = false
+            }
+        }
+        this.setState({ isValidForm: isValid }, () => {
+            return;
+        });
+    }
+
+    validateEmail = (errors, name) => {
+
+        // console.log(validator.isEmail(this.state[name]));
+        if (!validator.isEmail(this.state[name])) {
+            this.setError(errors, name, 'must be a valid email.')
+        } else {
+            this.resetError(errors, name);
         }
     }
 
-handleChange = (event) => {
+
+    validatePassword = (errors, name) => {
+        let fieldLength = this.state[name].length;
+        if (fieldLength < 8) {
+            this.setError(errors, name, `must be 8 or more characters. Current length: ${fieldLength}`)
+            if (!this.state[name]) {
+                this.setError(errors, name, 'is required.')
+            }
+        } else {
+            this.resetError(errors, name)
+            // console.log(errors[name].message);
+        }
+
+        if (this.state[name] !== this.state.verify) {
+            this.setError(errors, 'verify', 'must match password.');
+        }
+
+        if (this.state.verify !== this.state.password) {
+            this.setError(errors, 'verify', 'must match password.');
+        }
+        else {
+            this.resetError(errors, 'verify');
+        }
+    }
+
+    handleDataValidation = (name) => {
+        const errors = errorsInitialState;
+
+        // pass in name of input
+        // check the key for:
+        // 1. being empty
+        // 2. appropriate length
+        if (name === 'address2') return;
+        // checks for empty
+        // check password for appropriate length of 8
+        if (name === 'password' || name === 'verify' || name === 'email') {
+            if (name === 'password' || name === 'verify') {
+                this.validatePassword(errors, name);
+            }
+            if (name === 'email') {
+                this.validateEmail(errors, name);
+            }
+        }
+        else {
+            if (!this.state[name]) {
+                errors[name].isNotValid = true;
+                errors[name].message = `${errors[name].field} is required`;
+            } else {
+                this.resetError(errors, name);
+            }
+        }
+
+        this.setState({ errors }, () => {
+            this.validateForm()
+        })
+    }
+
+    handleChange = (event) => {
         const { target } = event;
         const value = target.type === 'checkbox' ? target.checked : target.value;
+        // console.log(target.value);
         const { name } = target;
 
         this.setState({
             [name]: value
+        }, () => {
+            // setTimeout(50);
+            this.handleDataValidation(name)
         });
+
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        
     }
 
     render() {
-        const {handleChange} = this;
+        const { handleChange } = this;
+        const { errors } = this.state;
+        const isDisabled = !this.state.isValidForm || !this.state.agree;
+        // console.log(this.state.isValidForm, this.state.agree);
+
         return (
             <div className='register-container'>
                 <div className='register-inner-container rounded'>
@@ -56,19 +157,43 @@ handleChange = (event) => {
 
                         <div className='container col-10 pt-2'>
                             <form className='' onSubmit={this.handleSubmit}>
-                                <NameInput onChange={handleChange} />
+                                <NameInput onChange={handleChange}
+                                    errors={
+                                        {
+                                            first: errors.first.message,
+                                            last: errors.last.message,
+                                        }} />
 
-                                <AddressInput onChange={handleChange} name={'address'}/>
-                                <AddressInput onChange={handleChange} name={'address2'}/>
-                                
-                                <CountryInput onChange={handleChange} />
+                                <AddressInput onChange={handleChange} name='address' errors={{ address: errors.address.message }} />
 
-                                <PhoneInput onChange={handleChange} />
+                                < AddressInput onChange={handleChange} name={'address2'} errors={{ address: null }} />
 
-                                <EmailInput onChange={handleChange} />
+                                <CountryInput onChange={handleChange}
+                                    errors={{
+                                        city: errors.city.message,
+                                        state: errors.state.message,
+                                        zip: errors.zip.message,
+                                    }} />
 
-                                <PasswordInput name='password' placeholder='Password' onChange={handleChange} />
-                                <PasswordInput name='Password' placeholder='Verify' onChange={handleChange} />
+                                <PhoneInput onChange={handleChange}
+                                    errors={{
+                                        area: errors.area.message,
+                                        phone: errors.number.message,
+                                    }} />
+
+                                <EmailInput onChange={handleChange}
+                                    errors={{
+                                        email: errors.email.message,
+                                    }} />
+
+                                <PasswordInput name='password' placeholder='Password' onChange={handleChange}
+                                    errors={{
+                                        password: errors.password.message,
+                                    }} />
+                                <PasswordInput name='verify' placeholder='Verify' onChange={handleChange}
+                                    errors={{
+                                        password: errors.verify.message,
+                                    }} />
 
                                 {/* Terms form component */}
                                 <TermInput onChange={handleChange} />
@@ -77,7 +202,7 @@ handleChange = (event) => {
                                 <div className='row component-input-form-container'>
                                     <div className='offset-4'></div>
                                     <div className='form-group col-4 row'>
-                                        <input className='form-control col-12 component-submit' type="submit" value='Register' disabled={!this.state.agree} />
+                                        <input className='form-control col-12 component-submit' type="submit" value='Register' disabled={isDisabled} />
                                     </div>
                                 </div>
                             </form>
