@@ -138,6 +138,34 @@ class Register extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if (this.state.isValidForm && this.state.agree) {
+            const user = {
+                first: this.state.first,
+                last: this.state.last,
+                address: this.state.address,
+                address2: this.state.address2,
+                city: this.state.city,
+                state: this.state.state,
+                zip: this.state.zip,
+                area: this.state.area,
+                number: this.state.number,
+                email: this.state.email,
+                password: this.state.password,
+                verify: this.state.verify,
+                agree: this.state.agree,
+            }
+            fetch('http://localhost:3000/register', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user),
+            })
+                .then(response => response.json())
+                .then(response => console.log(response))
+                .catch(err => console.log('something went wrong sending to server'));
+        }
+        else {
+            alert('You must fill out the form in order to submit this form');
+        }
     }
 
     render() {
