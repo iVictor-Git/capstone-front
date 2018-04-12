@@ -1,9 +1,5 @@
 .nav-bar-component-container {
     background-color: rgba(3, 126, 199, 0.75);
-    height: 98vh;
-    /* position: fixed; */
-    /* overflow-x: hidden; */
-    /* overflow-y: hidden; */
 }
 
 .navbar-item-nav {

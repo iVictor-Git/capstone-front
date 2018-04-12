@@ -1,5 +1,5 @@
 * {
-    font-size: 15px;
+    font-size: 1vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
@@ -13,8 +13,8 @@ body{
 
 .app-container {
     height: auto;
-    font-size: 20px;
-    width: 100vw;
+    /* font-size: 50vw; */
+    /* width: 100vw; */
 }
 .container-fluid, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .flex-column{
     padding: 0;
