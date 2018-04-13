@@ -52,9 +52,6 @@ class App extends Component {
             apis={this.state.googApiKey} />
           <SideBar />
         </div>
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete"
-          async></script>
       </div>
     );
   }

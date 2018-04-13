@@ -28,9 +28,9 @@ class Login extends Component {
     }
 
     // set errors
-    setError = (errors = {}, name = '', error = '') => {
+    setError = (errors = {}, name = '',) => {
         errors[name].isNotValid = true;
-        errors[name].message = `${errors[name].field} ${error}`;
+        // errors[name].message = `${errors[name].field} ${error}`;
     }
 
     //reset errors
@@ -57,7 +57,7 @@ class Login extends Component {
 
         // console.log(validator.isEmail(this.state[name]));
         if (!validator.isEmail(this.state[name])) {
-            this.setError(errors, name, 'must be a valid email.')
+            this.setError(errors, name)
         } else {
             this.resetError(errors, name);
         }
@@ -66,10 +66,10 @@ class Login extends Component {
     // validate password /TODO see register => TLDR refactor to use inside this component AND register
     validatePassword = (errors, name) => {
         let fieldLength = this.state[name].length;
-        if (fieldLength < 8) {
-            this.setError(errors, name, `must be 8 or more characters. Current length: ${fieldLength}`)
+        if (fieldLength < 5) {
+            this.setError(errors, name)
             if (!this.state[name]) {
-                this.setError(errors, name, 'is required.')
+                this.setError(errors, name)
             }
         } else {
             this.resetError(errors, name)
@@ -103,6 +103,25 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if (this.state.isValidForm) {
+            const credentials = {
+                email: this.state.email,
+                password: this.state.password
+            }
+            fetch('http://localhost:3000/login', {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(credentials)
+            })
+            .then(response => response.json())
+            .then(user => this.handleSignIn(user))
+            .catch(err => console.log(err));
+        }
+    }
+
+    handleSignIn = (user = {id: '', name: ''}) => {
+        this.props.onSignIn(user);
+        // console.log('User loaded');
     }
 
     render() {
