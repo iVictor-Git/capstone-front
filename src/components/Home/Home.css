@@ -10,17 +10,18 @@
 
 .home-title-container {
     /* font-size: 10vw; */
-    margin-top: 1vw;
+    /* margin-top: 1vw; */
     /* background-color: rgba(3, 126, 199, 0.8); */
     background-color: white;
     /* margin-left: 18.5vw; */
     text-align: center;
-    width: 97%;
+    width: 96.5%;
 }
 
 .home-title-container h1{
-    font-size: 3vw;
-    margin-top: 1.5vw;
+    font-size: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
 }
 
 .home-container > * {

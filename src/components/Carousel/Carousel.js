@@ -12,7 +12,7 @@ const Carousel = () => {
                 <li data-target="#carousel" data-slide-to="1"></li>
                 <li data-target="#carousel" data-slide-to="2"></li>
             </ol>
-            <div className="carousel-inner">
+            <div className="carousel-inner rounded">
                 <div className="carousel-item active">
                     <img className="d-block rounded-circle" src={firstFriend} alt="First slide" />
                 </div>

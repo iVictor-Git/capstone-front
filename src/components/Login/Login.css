@@ -1,0 +1,23 @@
+.login-container {
+    height: 100vh;
+    width: 50vw;
+    /* padding: 0 auto; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-inner-container {
+    box-shadow: 1px 1px 8px black;
+
+}
+
+.login-form-container {
+
+}
+
+.login-title {
+
+}
+

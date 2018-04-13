@@ -8,11 +8,7 @@ const Home = () => {
         <div className='home-container row'>
             <div className='home-title-container rounded'>
                 <h1>Home</h1>
-
-                <br/>
-
                 <Carousel />
-
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit expedita est iste fugit laudantium vel illum minima animi quisquam asperiores rem cumque ipsa pariatur unde, velit iure corrupti perspiciatis molestias.</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit expedita est iste fugit laudantium vel illum minima animi quisquam asperiores rem cumque ipsa pariatur unde, velit iure corrupti perspiciatis molestias.</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit expedita est iste fugit laudantium vel illum minima animi quisquam asperiores rem cumque ipsa pariatur unde, velit iure corrupti perspiciatis molestias.</p>

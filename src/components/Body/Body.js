@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Body.css';
+import Home from '../Home/Home';
 import Register from '../Register/Register';
-// import Home from '../Home/Home';
+import Login from '../Login/Login';
 
 
 class Body extends Component {
@@ -24,8 +25,9 @@ class Body extends Component {
         const {handleSignIn } = this;
         return (
             <div className='body-container col-7'>
-                {/* <Home /> */}
+                <Home />
                 <Register onSignIn={handleSignIn} />
+                <Login onSignIn={handleSignIn} />
             </div>
         )
     }
