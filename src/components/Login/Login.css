@@ -9,13 +9,13 @@
 }
 
 .login-inner-container {
-    box-shadow: 1px 1px 8px black;
+    box-shadow: 1px 1px 4px 1px black;
     padding-top: 2vh;
     padding-bottom: 10vh;
 }
 
 .login-inner-inner-container {
-    box-shadow: 1px 1px 8px black;    
+    box-shadow: 1px 1px 1px 1px teal;    
     margin: 0 6vw;
 }
 
@@ -35,3 +35,15 @@
     justify-content: center;
 }
 
+.login-form-container .container form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.login-form-container .container form .login-submit-container {
+    display: flex;
+    justify-content: center;
+    /* margin-left: 1.5vw; */
+    height: auto;
+    width: 100%;
+
+}

@@ -33,18 +33,18 @@ class Register extends Component {
     }
 
     // set errors
-    setError = (errors, name, error) => {
+    setError = (errors = {}, name = '', error = '') => {
         errors[name].isNotValid = true;
         errors[name].message = `${errors[name].field} ${error}`;
     }
 
     //reset errors
-    resetError = (errors, name) => {
+    resetError = (errors = {}, name = '') => {
         errors[name].isNotValid = false;
         errors[name].message = ``;
     }
 
-    //validate form
+    //validate form /TODO refactor to be useable in Login component
     validateForm = () => {
         let isValid = true;
         for (const key in this.state.errors) {
@@ -57,8 +57,8 @@ class Register extends Component {
         });
     }
 
-    // validate email using validator lib
-    validateEmail = (errors, name) => {
+    // validate email using validator lib /TODO refactor to be useable in Login component
+    validateEmail = (errors = {}, name = '') => {
 
         // console.log(validator.isEmail(this.state[name]));
         if (!validator.isEmail(this.state[name])) {
@@ -68,7 +68,7 @@ class Register extends Component {
         }
     }
 
-    // validate password
+    // validate password /TODO refactor to be useable in Login component
     validatePassword = (errors, name) => {
         let fieldLength = this.state[name].length;
         if (fieldLength < 8) {
