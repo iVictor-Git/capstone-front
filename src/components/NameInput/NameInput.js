@@ -13,7 +13,12 @@ const NameInput = ({ onChange, errors }) => {
 
         <InputRow>
             <div className='form-group col-6 row'>
-                <input className='form-control col-11' onChange={handleChange} type="text" placeholder='First Name' name='first' />
+                <input 
+                autoFocus
+                className='form-control col-11' 
+                onChange={handleChange} type="text" 
+                placeholder='First Name' 
+                name='first' />
                 <div className='text-danger'>{errors.first}</div>
             </div>
             <div className='form-group col-6 row'>
