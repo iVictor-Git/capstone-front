@@ -1,0 +1,11 @@
+.nav-bar-component-container {
+    background-color: rgba(3, 126, 199, 0.75);
+}
+
+.navbar-item-nav {
+    /* text-align: center; */
+}
+
+.navbar-item-nav div{
+    background-color: rgba(red, green, blue, 1);
+}

@@ -1,0 +1,23 @@
+.article-container {
+    width: 90%;
+    /* display: inherit; */
+    /* flex-direction: inherit; */
+    height: 88vh;
+    /* border: 1px solid black; */
+    margin-top: 2vh;
+    /* margin-left: 0.4vw;     */
+}
+.articles {
+    height: auto;
+    display: inherit;
+    /* width: 93%; */
+    flex-direction: inherit;
+    justify-content: space-between;
+    height: 88vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.articles::-webkit-scrollbar {
+    width: 0;
+}
