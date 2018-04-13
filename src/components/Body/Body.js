@@ -3,7 +3,7 @@ import './Body.css';
 // import Home from '../Home/Home';
 // import Register from '../Register/Register';
 import Login from '../Login/Login';
-
+import Chat from '../Chat/Chat';
 
 class Body extends Component {
     constructor(props) {
@@ -27,7 +27,9 @@ class Body extends Component {
             <div className='body-container col-7'>
                 {/* <Home /> */}
                 {/* <Register onSignIn={handleSignIn} /> */}
-                <Login onSignIn={handleSignIn} />
+                {/* <Login onSignIn={handleSignIn} /> */}
+                <Chat />
+
             </div>
         )
     }
