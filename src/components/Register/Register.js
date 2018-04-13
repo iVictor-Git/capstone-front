@@ -30,18 +30,21 @@ class Register extends Component {
             errors: errorsInitialState,
             isValidForm: false,
         }
-
-
     }
+
+    // set errors
     setError = (errors, name, error) => {
         errors[name].isNotValid = true;
         errors[name].message = `${errors[name].field} ${error}`;
     }
+
+    //reset errors
     resetError = (errors, name) => {
         errors[name].isNotValid = false;
         errors[name].message = ``;
     }
 
+    //validate form
     validateForm = () => {
         let isValid = true;
         for (const key in this.state.errors) {
@@ -54,6 +57,7 @@ class Register extends Component {
         });
     }
 
+    // validate email using validator lib
     validateEmail = (errors, name) => {
 
         // console.log(validator.isEmail(this.state[name]));
@@ -64,7 +68,7 @@ class Register extends Component {
         }
     }
 
-
+    // validate password
     validatePassword = (errors, name) => {
         let fieldLength = this.state[name].length;
         if (fieldLength < 8) {
@@ -92,13 +96,7 @@ class Register extends Component {
     handleDataValidation = (name) => {
         const errors = errorsInitialState;
 
-        // pass in name of input
-        // check the key for:
-        // 1. being empty
-        // 2. appropriate length
         if (name === 'address2') return;
-        // checks for empty
-        // check password for appropriate length of 8
         if (name === 'password' || name === 'verify' || name === 'email') {
             if (name === 'password' || name === 'verify') {
                 this.validatePassword(errors, name);
@@ -136,10 +134,14 @@ class Register extends Component {
 
     }
 
+    handleSignIn = (user) => {
+        this.props.onSignIn(user);
+    }
+
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.isValidForm && this.state.agree) {
-            const user = {
+            let user = {
                 first: this.state.first,
                 last: this.state.last,
                 address: this.state.address,
@@ -160,7 +162,9 @@ class Register extends Component {
                 body: JSON.stringify(user),
             })
                 .then(response => response.json())
-                .then(response => console.log(response))
+                .then(user => {
+                    this.props.onSignIn(user)
+                })
                 .catch(err => console.log('something went wrong sending to server'));
         }
         else {

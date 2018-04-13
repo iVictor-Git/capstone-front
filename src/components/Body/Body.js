@@ -16,12 +16,16 @@ class Body extends Component {
         
     }
 
+    handleSignIn = (user) => {
+        this.props.onSignIn(user)
+    }
+
     render() {
-        const { onElementClick } = this.props;
+        const {handleSignIn } = this;
         return (
-            <div onMouseEnter={onElementClick} className='body-container col-7'>
+            <div className='body-container col-7'>
                 {/* <Home /> */}
-                <Register />
+                <Register onSignIn={handleSignIn} />
             </div>
         )
     }
