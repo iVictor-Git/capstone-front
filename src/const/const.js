@@ -1,4 +1,4 @@
-const errorsInitialState = {
+const errorsRegisterInitialState = {
     first: {
         field: '*First Name',
         isNotValid: true,
@@ -114,4 +114,4 @@ const states = [
     'Wyoming',
 ];
 
-export {errorsInitialState, states};
+export {errorsRegisterInitialState, states};

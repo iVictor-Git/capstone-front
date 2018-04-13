@@ -6,7 +6,7 @@ const EmailInput = ({ onChange, errors, autofocus }) => {
     const handleChange = (event) => {
         onChange(event);
     }
-    console.log(autofocus);
+    // console.log(autofocus);
 
     return (
         <InputRow>

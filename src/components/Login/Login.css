@@ -10,14 +10,28 @@
 
 .login-inner-container {
     box-shadow: 1px 1px 8px black;
+    padding-top: 2vh;
+    padding-bottom: 10vh;
+}
 
+.login-inner-inner-container {
+    box-shadow: 1px 1px 8px black;    
+    margin: 0 6vw;
 }
 
 .login-form-container {
+    padding-top: 4vh;
 
 }
 
-.login-title {
+.login-form-container .container {
+    padding-bottom: 2vh; 
+}
 
+.login-title {
+    padding-top: 0;
+    padding-bottom: 1.5vh;
+    display: flex;
+    justify-content: center;
 }
 

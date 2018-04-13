@@ -9,8 +9,25 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            email: '',
+            password: '',
+            errors: {
+                email: '',
+                password: '',
+            },
+            isFormValid: false
 
         }
+    }
+
+    handleChange = (event) => {
+        const {target} = event;
+        const { name, value } = target;
+        this.setState({
+            [name]: value
+        }, () => {
+            console.log(this.state);
+        })
     }
 
     handleSubmit = (data) => {
@@ -22,28 +39,31 @@ class Login extends Component {
 
         return (
             <div className='login-container'>
-                <div className='login-inner-container rounded'>
+                <div className='login-inner-container rounded container'>
 
-                    <div className='login-form-container container'>
-                        <div className='login-title'>
-                            <h1>Login</h1>
-                        </div>
+                    <div className='login-title'>
+                        <h1>Login</h1>
+                    </div>
+                    <div className='login-inner-inner-container rounded'>
 
-                        <div className='container col-10 pt-2'>
-                            <form className=''>
-                                <EmailInput onChange={handleChange} errors={{email: ''}} autofocus={true}/>
-                                <PasswordInput name='password' placeholder='Password' onChange={handleChange}  errors={{password: ''}} />
-                                <div className='row component-input-form-container'>
-                                    <div className='offset-4'></div>
-                                    <div className='form-group col-4 row'>
-                                        <input className='form-control col-12 component-submit' type="submit" value='Login' />
+                        <div className='login-form-container container'>
+
+                            <div className='container col-9 pt-2'>
+                                <form className=''>
+                                    <EmailInput onChange={handleChange} errors={{ email: '' }} autofocus={true} />
+                                    <PasswordInput name='password' placeholder='Password' onChange={handleChange} errors={{ password: '' }} />
+                                    <div className='row component-input-form-container'>
+                                        <div className='offset-4'></div>
+                                        <div className='form-group col-4 row'>
+                                            <input className='form-control col-12 component-submit' type="submit" value='Login' />
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
         )

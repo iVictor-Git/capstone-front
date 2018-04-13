@@ -7,7 +7,7 @@ import PhoneInput from '../PhoneInput/PhoneInput';
 import EmailInput from '../EmailInput/EmailInput';
 import PasswordInput from '../PasswordInput/PasswordInput';
 import TermInput from '../TermInput/TermInput';
-import { errorsInitialState } from '../../const/const';
+import { errorsRegisterInitialState  } from '../../const/const';
 import validator from 'validator';
 
 class Register extends Component {
@@ -27,7 +27,7 @@ class Register extends Component {
             password: '',
             verify: '',
             agree: false,
-            errors: errorsInitialState,
+            errors: errorsRegisterInitialState,
             isValidForm: false,
         }
     }
@@ -94,7 +94,7 @@ class Register extends Component {
     }
 
     handleDataValidation = (name) => {
-        const errors = errorsInitialState;
+        const errors = errorsRegisterInitialState;
 
         if (name === 'address2') return;
         if (name === 'password' || name === 'verify' || name === 'email') {
