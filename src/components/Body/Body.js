@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Body.css';
 // import Home from '../Home/Home';
 // import Register from '../Register/Register';
-import Login from '../Login/Login';
-import Chat from '../Chat/Chat';
+// import Login from '../Login/Login';
+// import Chat from '../Chat/Chat';
+import ApartmentFinder from '../ApartmentFinder/ApartmentFinder';
 
 class Body extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Body extends Component {
                 {/* <Home /> */}
                 {/* <Register onSignIn={handleSignIn} /> */}
                 {/* <Login onSignIn={handleSignIn} /> */}
-                <Chat />
+                {/* <Chat user={this.props.user}/> */}
 
             </div>
         )
