@@ -1,0 +1,28 @@
+.chat-loaded-content-container {
+    /* min-height: 0px; */
+    height: 89.4%;
+    border-bottom: 1px solid black;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    /* align-items: flex-start; */
+    /* justify-content: flex-end; */
+    /* margin-left: 5vw; */
+    /* width: 100%; */
+    /* padding-left: 2vw; */
+}
+
+.chat-loaded-content-container::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.chat-loaded-content-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px 2px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+.chat-loaded-content-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}

@@ -15,7 +15,7 @@ class Body extends Component {
     }
 
     renderContent = (route) => {
-        
+
     }
 
     handleSignIn = (user) => {
@@ -23,14 +23,14 @@ class Body extends Component {
     }
 
     render() {
-        const {handleSignIn } = this;
+        const { handleSignIn } = this;
         return (
             <div className='body-container col-7'>
-                {/* <Home /> */}
-                {/* <Register onSignIn={handleSignIn} /> */}
-                {/* <Login onSignIn={handleSignIn} /> */}
-                {/* <Chat user={this.props.user}/> */}
-
+                {/* <Home />
+                <Register onSignIn={handleSignIn} /> */}
+                {/* <Login onSignIn={handleSignIn} />
+                <Chat user={this.props.user}/> */}
+                <ApartmentFinder />
             </div>
         )
     }
