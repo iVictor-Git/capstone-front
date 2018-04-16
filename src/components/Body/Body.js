@@ -4,7 +4,8 @@ import './Body.css';
 // import Register from '../Register/Register';
 // import Login from '../Login/Login';
 // import Chat from '../Chat/Chat';
-import ApartmentFinder from '../ApartmentFinder/ApartmentFinder';
+// import ApartmentFinder from '../ApartmentFinder/ApartmentFinder';
+import Profile from '../Profile/Profile';
 
 class Body extends Component {
     constructor(props) {
@@ -23,14 +24,15 @@ class Body extends Component {
     }
 
     render() {
-        const { handleSignIn } = this;
+        // const { handleSignIn } = this;
         return (
             <div className='body-container col-7'>
                 {/* <Home />
                 <Register onSignIn={handleSignIn} /> */}
                 {/* <Login onSignIn={handleSignIn} />
                 <Chat user={this.props.user}/> */}
-                <ApartmentFinder />
+                {/* <ApartmentFinder /> */}
+                <Profile user={this.props.user}/>
             </div>
         )
     }
