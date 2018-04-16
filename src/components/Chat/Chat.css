@@ -37,10 +37,6 @@
     /* border-radius: 10%; */
 }
 
-.chat-loaded-content-container {
-    height: 89.4%;
-    border-bottom: 1px solid black;
-}
 
 .chat-form-container{
     height: 7%;
@@ -50,13 +46,19 @@
 .chat-form-container .form-group {
     margin-bottom: 0;
     height: 100%;
+    /* max-height: 150%; */
 }
 
 .chat-form-container .chat-form-chat-input {
-    height: 50%;
+    /* height: auto; */
     width: 80%
 }
 .chat-form-container .chat-form-chat-submit {
     height: 100%;
     width: 20%;
 }
+
+.chat-form-container .chat-form-chat-input input[type='text'] {
+    max-height: 200%;
+}
+
