@@ -9,6 +9,7 @@ import PasswordInput from '../PasswordInput/PasswordInput';
 import TermInput from '../TermInput/TermInput';
 import { errorsRegisterInitialState  } from '../../const/const';
 import validator from 'validator';
+import {states} from '../../const/const';
 
 class Register extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class Register extends Component {
             address: '',
             address2: '',
             city: '',
-            state: '',
+            state: states[0],
             zip: '',
             area: '',
             number: '',

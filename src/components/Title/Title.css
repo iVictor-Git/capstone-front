@@ -1,0 +1,12 @@
+.component-title-container {
+    background-color: blanchedalmond;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.component-title {
+    /* padding-top: 1%; */
+    /* padding-bottom: 3%; */
+}

@@ -1,4 +1,4 @@
-const { extractWord } = require('./extractword');
+import { extractWord } from "../functionLib/extractword";
 
 test('given string with two words, extract into list', () => {
     const test = 'abc def'

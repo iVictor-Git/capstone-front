@@ -1,0 +1,5 @@
+const validateAddress = () => {
+
+}
+
+export { validateAddress };
