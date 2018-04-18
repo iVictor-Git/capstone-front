@@ -6,6 +6,8 @@ import './Body.css';
 // import Chat from '../Chat/Chat';
 // import ApartmentFinder from '../ApartmentFinder/ApartmentFinder';
 import Profile from '../Profile/Profile';
+import { defaultUserProfile } from '../../const/const';
+
 
 class Body extends Component {
     constructor(props) {
@@ -17,22 +19,25 @@ class Body extends Component {
 
     renderContent = (route) => {
 
-    }
+}
 
     handleSignIn = (user) => {
         this.props.onSignIn(user)
     }
 
     render() {
-        // const { handleSignIn } = this;
+        const { handleSignIn } = this;
         return (
             <div className='body-container col-7'>
-                {/* <Home />
-                <Register onSignIn={handleSignIn} /> */}
-                {/* <Login onSignIn={handleSignIn} />
-                <Chat user={this.props.user}/> */}
-                {/* <ApartmentFinder /> */}
-                <Profile user={this.props.user}/>
+                {/* <Home /> */}
+                {/* <Register onSignIn={handleSignIn} />
+                <Login onSignIn={handleSignIn} />
+                <Chat user={this.props.user}/>
+                <ApartmentFinder /> */}
+                <Profile 
+                user={defaultUserProfile}
+                // user={this.props.user}
+                />
             </div>
         )
     }
