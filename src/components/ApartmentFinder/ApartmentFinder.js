@@ -43,7 +43,7 @@ class ApartmentFinder extends Component {
                         <div className='apartment-finder-individual-results-container'></div>
                     </div>
                 </div>
-
+                <script type="text/javascript" src={`https://maps.googleapis.com/maps/api/js?key=${YOUR_API_KEY}&libraries=places`}></script>
             </div>
         )
     }
