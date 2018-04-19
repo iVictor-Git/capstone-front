@@ -119,7 +119,7 @@ const defaultUserProfile = {
         basic: {
             first: 'Victor',
             last: 'Tran',
-            birthday: new Date('1994-11-13T00:00:00').toLocaleDateString(),
+            birthday: new Date('1994-11-13T00:00:00').toDateString()    ,
         },
         contact: {
             phone: {
