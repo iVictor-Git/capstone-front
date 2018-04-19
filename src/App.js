@@ -12,23 +12,28 @@ class App extends Component {
         id: '',
         name: '',
       },
-      api_keys: {},
+      api_keys: {
+        API_KEY: '',
+        GOOGLE_PLACES_API_JS: ''
+      },
     }
-    // fetch(`http://localhost:3000/`, {
-    //   method: 'post',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     password: '12345+12345'
-    //   })
-    // })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log(data);
-    //     this.setState({ googApiKey: data.googleApiKey })
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
+    fetch(`http://localhost:3000/`, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: '12345+12345'
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          API_KEY: data.API_KEY,
+          GOOGLE_PLACES_API_JS: data.g_p_a_j
+        })
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   loadUser = (user) => {
@@ -49,7 +54,7 @@ class App extends Component {
           <Body
             onSignIn={this.loadUser}
             user={this.state.user}
-            apis={this.state.googApiKey} />
+            api_keys={this.state.api_keys} />
           <SideBar />
         </div>
       </div>

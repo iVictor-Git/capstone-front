@@ -33,3 +33,7 @@ body{
 .body-container, .nav-bar-component-container, .side-bar-container {
     height: 100vh;
 }
+
+.capstone-row {
+    display: flex;
+}

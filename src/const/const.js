@@ -114,4 +114,32 @@ const states = [
     'Wyoming',
 ];
 
-export {errorsRegisterInitialState, states};
+const defaultUserProfile = {
+    user: {
+        basic: {
+            first: 'Victor',
+            last: 'Tran',
+            birthday: new Date('1994-11-13T00:00:00').toDateString()    ,
+        },
+        contact: {
+            phone: {
+                area: '123',
+                number: '1113333',
+            },
+            social: ['instagram', 'facebook', 'tumblr']
+        },
+        account: {
+            email: 'victor@test.com',
+            password: '********'
+        },
+        personal: {
+            address: '123 some street',
+            address2: 'maybe #1',
+            city: 'St. Petersburg',
+            state: 'Florida',
+            zip: '12345'
+        }
+    }
+}
+
+export { errorsRegisterInitialState, states, defaultUserProfile };
