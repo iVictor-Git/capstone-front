@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Profile.css';
 import Title from '../Title/Title';
 import Avatar from '../Avatar/Avatar';
+import BasicProfile from '../BasicProfile/BasicProfile';
 
 class Profile extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Profile extends Component {
 
             <div className='profile-component-container'>
 
-                <Title value='Profile' />
+                <Title value='Profile' className='component-title-container'/>
 
                 {/* This is a component => Avatar */}
                 <Avatar image={''} />
@@ -32,28 +33,7 @@ class Profile extends Component {
                 </div>
                 {/* This is a loaded container */}
                 <div className='profile-component-information-display-container'>
-                    {/* title component with title=x */}
-                    <div className='profile-component-information-title-container'>
-                        <h2>
-                            {`Basic`}
-                        </h2>
-                    </div>
-
-                    <div className='profile-component-information-group-container'>
-                        {/* Field Component, value=x and name=x */}
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`First`}: </div>
-                            <div className='profile-component-information-50'>{basic.first}</div>
-                        </div>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Last`}: </div>
-                            <div className='profile-component-information-50'>{basic.last}</div>
-                        </div>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Birthday`}: </div>
-                            <div className='profile-component-information-50'>{basic.birthday}</div>
-                        </div>
-                    </div>
+                    <BasicProfile first={basic.first} last={basic.last} birthday={basic.birthday} />
                 </div>
                 {/* another piece similar to above */}
                 <div className='profile-component-information-display-container'>
