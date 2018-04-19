@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import Avatar from '../Avatar/Avatar';
 import BasicProfile from '../BasicProfile/BasicProfile';
 import ContactProfile from '../ContactProfile/ContactProfile';
+import AccountProfile from '../AccountProfile/AccountProfile';
 
 class Profile extends Component {
     constructor(props) {
@@ -21,11 +22,11 @@ class Profile extends Component {
 
             <div className='profile-component-container'>
 
-                <Title value='Profile' className='component-title-container'/>
+                <Title value='Profile' className='component-title-container' />
 
                 {/* This is a component => Avatar */}
                 <Avatar image={''} />
-                
+
                 <div className='profile-component-information-container'>
                     {/*  These are going to be components */}
                     <div className='profile-component-information-type-container'>Basic</div>
@@ -39,28 +40,14 @@ class Profile extends Component {
                 </div>
 
                 <div className='profile-component-information-display-container'>
-                    <ContactProfile 
-                    phone={`(${contact.phone.area}) ${contact.phone.number.slice(0, 3)} - ${contact.phone.number.slice(3)}`}
-                    socials={socialsList} />
+                    <ContactProfile
+                        phone={`(${contact.phone.area}) ${contact.phone.number.slice(0, 3)} - ${contact.phone.number.slice(3)}`}
+                        socials={socialsList} />
                 </div>
 
                 <div className='profile-component-information-display-container'>
-                    <div className='profile-component-information-title-container'>
-                        <h2>
-                            {`Account`}
-                        </h2>
-                    </div>
-
-                    <div className='profile-component-information-group-container'>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Email`}: </div>
-                            <div className='profile-component-information-50'>{account.email}</div>
-                        </div>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Password`}: </div>
-                            <div className='profile-component-information-50'>{account.password}</div>
-                        </div>
-                    </div>
+                    {/* This will be moved to something called settings */}
+                    <AccountProfile email={account.email} password={account.password} />
                 </div>
 
                 <div className='profile-component-information-display-container'>
