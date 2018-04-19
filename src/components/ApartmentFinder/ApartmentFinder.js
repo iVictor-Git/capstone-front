@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ApartmentFinder.css';
+import AutoComplete from '../AutoComplete/AutoComplete';
 
 class ApartmentFinder extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class ApartmentFinder extends Component {
     }
 
     render() {
+        const {api_keys} = this.props;
         return (
             <div className='apartment-finder-component-container'>
                 <div className='apartment-finder-title-container'>
@@ -22,9 +24,7 @@ class ApartmentFinder extends Component {
                 </div>
                 <div className='apartment-finder-search-container'>
                     <form action="" onSubmit={(event) => event.preventDefault()}>
-                        <div className='form-group apartment-finder-input-container'>
-                            <input className='form-control' type="search" placeholder='Search for apartments' />
-                        </div>
+                        <AutoComplete api_keys={api_keys}/>
                     </form>
                 </div>
 
@@ -43,7 +43,6 @@ class ApartmentFinder extends Component {
                         <div className='apartment-finder-individual-results-container'></div>
                     </div>
                 </div>
-                <script type="text/javascript" src={`https://maps.googleapis.com/maps/api/js?key=${YOUR_API_KEY}&libraries=places`}></script>
             </div>
         )
     }
