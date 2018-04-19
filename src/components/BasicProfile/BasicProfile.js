@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from '../Title/Title';
-import ProfileInformation from '../ProfileInformation/ProfileInformation';
+import BasicProfileInformation from '../BasicProfileInformation/BasicProfileInformation';
 
 const BasicProfile = ({ first, last, birthday }) => {
     return (
@@ -9,7 +9,7 @@ const BasicProfile = ({ first, last, birthday }) => {
                 value='Basic'
                 className='profile-component-information-title-container' />
 
-            <ProfileInformation
+            <BasicProfileInformation
                 className='profile-component-information-group-container'
                 first={first}
                 last={last}

@@ -3,6 +3,7 @@ import './Profile.css';
 import Title from '../Title/Title';
 import Avatar from '../Avatar/Avatar';
 import BasicProfile from '../BasicProfile/BasicProfile';
+import ContactProfile from '../ContactProfile/ContactProfile';
 
 class Profile extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class Profile extends Component {
         const socials = contact.social.map((account, index) => {
             return <li key={index}>{account}</li>
         })
+        const socialsList = <ul>{socials}</ul>
         return (
 
             <div className='profile-component-container'>
@@ -35,24 +37,11 @@ class Profile extends Component {
                 <div className='profile-component-information-display-container'>
                     <BasicProfile first={basic.first} last={basic.last} birthday={basic.birthday} />
                 </div>
-                {/* another piece similar to above */}
-                <div className='profile-component-information-display-container'>
-                    <div className='profile-component-information-title-container'>
-                        <h2>
-                            {`Contact`}
-                        </h2>
-                    </div>
 
-                    <div className='profile-component-information-group-container'>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Phone`}: </div>
-                            <div className='profile-component-information-50'>{`(${contact.phone.area}) ${contact.phone.number.slice(0, 3)} - ${contact.phone.number.slice(3)}`}</div>
-                        </div>
-                        <div className='capstone-row'>
-                            <div className='profile-component-information-25'>{`Social`}: </div>
-                            <div className='profile-component-information-50'><ul>{socials}</ul></div>
-                        </div>
-                    </div>
+                <div className='profile-component-information-display-container'>
+                    <ContactProfile 
+                    phone={`(${contact.phone.area}) ${contact.phone.number.slice(0, 3)} - ${contact.phone.number.slice(3)}`}
+                    socials={socialsList} />
                 </div>
 
                 <div className='profile-component-information-display-container'>
