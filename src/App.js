@@ -17,23 +17,23 @@ class App extends Component {
         GOOGLE_PLACES_API_JS: ''
       },
     }
-    fetch(`http://localhost:3000/`, {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        password: '12345+12345'
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          API_KEY: data.API_KEY,
-          GOOGLE_PLACES_API_JS: data.g_p_a_j
-        })
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    // fetch(`http://localhost:3000/`, {
+    //   method: 'post',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     password: '12345+12345'
+    //   })
+    // })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({
+    //       API_KEY: data.API_KEY,
+    //       GOOGLE_PLACES_API_JS: data.g_p_a_j
+    //     })
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
   }
 
   loadUser = (user) => {

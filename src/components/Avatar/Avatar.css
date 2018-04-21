@@ -1,11 +1,12 @@
 .profile-component-avatar-container {
     height: 30%;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     justify-content: center;
     /* align-content: center; */
     align-items: center;
     flex-direction: column;
+    border-bottom: 1px solid black;
 }
 
 .profile-avatar-img-container {
