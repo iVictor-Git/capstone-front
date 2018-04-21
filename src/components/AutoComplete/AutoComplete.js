@@ -16,6 +16,7 @@ class AutoComplete extends React.Component {
         // console.log(address);
         geocodeByAddress(address)
             .then(results => {
+                console.log(results);
                 const city = results[0].address_components[0].long_name;
                 const state = results[0].address_components[2].long_name;
                 console.log(city, state);
