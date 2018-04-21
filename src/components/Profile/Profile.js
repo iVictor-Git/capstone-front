@@ -24,7 +24,7 @@ class Profile extends Component {
         
         return (
 
-            <div className='profile-component-container'>
+            <div className='profile-component-container container'>
 
                 <Title value='Profile' className='component-title-container' />
 
