@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Profile.css';
 import Title from '../Title/Title';
 import Avatar from '../Avatar/Avatar';
+import ContentManager from '../ContentManager/ContentManager';
 import BasicProfile from '../BasicProfile/BasicProfile';
 import ContactProfile from '../ContactProfile/ContactProfile';
 import AccountProfile from '../AccountProfile/AccountProfile';
@@ -10,7 +11,14 @@ import PersonalProfile from '../PersonalProfile/PersonalProfile';
 class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = this.props.user;
+        this.state = {
+            route: '',
+            user: this.props.user
+        }
+    }
+
+    handleContentChange = (event) => {
+        this.setState({route: event.target.name})
     }
 
     render() {
@@ -28,13 +36,8 @@ class Profile extends Component {
                 {/* This is a component => Avatar */}
                 <Avatar image={''} />
 
-                <div className='profile-component-information-container'>
-                    {/*  These are going to be components */}
-                    <div className='profile-component-information-type-container'>Basic</div>
-                    <div className='profile-component-information-type-container'>Contact</div>
-                    <div className='profile-component-information-type-container'>Personal</div>
-                    <div className='profile-component-information-type-container'>Other</div>
-                </div>
+                <ContentManager onContentChange={this.handleContentChange}/>
+
                 {/* This is a loaded container */}
                 <div className='profile-component-information-display-container'>
                     <BasicProfile first={basic.first} last={basic.last} birthday={basic.birthday} />
@@ -52,13 +55,13 @@ class Profile extends Component {
                 </div>
 
                 <div className='profile-component-information-display-container'>
-                        <PersonalProfile 
-                        address={personal.address} 
+                    <PersonalProfile
+                        address={personal.address}
                         address2={personal.address2}
                         city={personal.city}
                         state={personal.state}
                         zip={personal.zip}
-                        />
+                    />
                 </div>
 
             </div>

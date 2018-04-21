@@ -1,0 +1,11 @@
+.profile-component-information-type-container {
+    background-color: white;
+    /* border: none; */
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.profile-component-information-type-container:hover {
+    background-color: gray; 
+}
