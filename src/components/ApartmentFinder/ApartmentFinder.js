@@ -7,8 +7,38 @@ class ApartmentFinder extends Component {
         super(props);
         this.state = {
             search: '',
-            places: [],
-
+            places: [{
+                "identifier": {
+                    "obPropId": "16370081112103",
+                    "fips": "12103",
+                    "apn": "353016089280030060",
+                    "apnOrig": "353016089280030060"
+                },
+                "address": {
+                    "country": "US",
+                    "countrySubd": "FL",
+                    "line1": "2766 62ND AVE N",
+                    "line2": "SAINT PETERSBURG, FL 33702",
+                    "locality": "Saint Petersburg",
+                    "matchCode": "ExaStr",
+                    "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
+                    "postal1": "33702",
+                    "postal2": "6372",
+                    "postal3": "C014"
+                },
+                "location": {
+                    "accuracy": "Street",
+                    "elevation": 0,
+                    "latitude": "27.828256",
+                    "longitude": "-82.670902",
+                    "distance": 0,
+                    "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                },
+                "vintage": {
+                    "lastModified": "2018-1-24",
+                    "pubDate": "2018-2-7"
+                }
+            }],
         }
     }
 
@@ -27,10 +57,26 @@ class ApartmentFinder extends Component {
             }
         })
             .then(response => response.json())
-            .then(response => this.setState({places: response.property}, 
-                () => console.log(this.state.places)))
+            .then(response => this.setState({ places: response.property }))
             .catch(err => console.log('Something went wrong fetching properties'));
         console.log('submitted');
+    }
+
+    loadPlaces = (places) => {
+        const results = places.map(place => {
+            const { oneLine } = place.address;
+            return (
+                <div className='apartment-finder-individual-results-container' key={place.identifier.obPropId}>
+                    <div className='results-container'>
+                        <div className='results-image'><img src="#" alt="" /></div>
+                        <div className='results-address-full'>
+                            {oneLine}
+                        </div>
+                    </div>
+                </div>
+            )
+        })
+        return results;
     }
 
     render() {
@@ -42,9 +88,8 @@ class ApartmentFinder extends Component {
                 </div>
                 <div className='apartment-finder-search-container'>
                     <form action="" onSubmit={this.handleSubmit}>
-                        <div className='form-group'>
+                        <div className='form-group search-input-container'>
                             <input className='form-control' onChange={this.handleChange} type="text" name='search' placeholder='Enter a zip code' />
-
                         </div>
                         {/* <AutoComplete api_keys={api_keys}/> */}
                     </form>
@@ -58,11 +103,7 @@ class ApartmentFinder extends Component {
 
                 <div className='apartment-finder-search-results-container'>
                     <div className='apartment-finder-list-results-container'>
-                        <div className='apartment-finder-individual-results-container'></div>
-                        <div className='apartment-finder-individual-results-container'></div>
-                        <div className='apartment-finder-individual-results-container'></div>
-                        <div className='apartment-finder-individual-results-container'></div>
-                        <div className='apartment-finder-individual-results-container'></div>
+                        {this.loadPlaces(this.state.places)}
                     </div>
                 </div>
             </div>

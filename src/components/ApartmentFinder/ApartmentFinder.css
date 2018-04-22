@@ -12,7 +12,7 @@
     padding-bottom: 1%;
     /* background-color: blue; */
     height: 10%;
-    
+    /* width: 80%; */
 }
 
 .apartment-finder-input-container {
@@ -39,6 +39,15 @@
     padding-top: 2%;
     height: 35%;
     /* background-color: darkcyan; */
+}
+
+div.search-input-container {
+    display: flex;
+    justify-content: center;
+}
+
+div.search-input-container .form-control {
+    width: 90%;
 }
 
 
@@ -68,5 +77,32 @@
 
 .apartment-finder-individual-results-container {
     border-bottom: 1px solid black;
-    height: 25%;
+    height: auto;
+}
+
+.results-container {
+    display: flex;
+}
+
+.results-container:hover {
+    background-color: lightgray;
+}
+
+.results-image {
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+}
+
+.results-image img {
+}
+
+.results-address-full {
+    display: flex;
+    /* width: 75%; */
+    padding-left: 3%;
+    /* align-content: center; */
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
 }
