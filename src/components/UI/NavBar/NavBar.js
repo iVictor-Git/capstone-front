@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import NavItemList from '../NavItemList/NavItemList';
+import NavItemList from './NavItemList/NavItemList';
 
 const NavBar = () => {
 

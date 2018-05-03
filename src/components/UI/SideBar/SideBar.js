@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.css';
-import ArticleList from '../ArticleList/ArticleList';
+import ArticleList from './ArticleList/ArticleList';
 
 const SideBar = () => {
     return (

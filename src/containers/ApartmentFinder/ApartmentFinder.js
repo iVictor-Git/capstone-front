@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ApartmentFinder.css';
-import AutoComplete from '../AutoComplete/AutoComplete';
 
 class ApartmentFinder extends Component {
     constructor(props) {

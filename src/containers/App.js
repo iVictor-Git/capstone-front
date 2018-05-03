@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from '../components/UI/NavBar/NavBar';
 import './App.css';
-import Body from './components/Body/Body';
-import SideBar from './components/SideBar/SideBar';
+import Body from '../components/UI/Body/Body';
+import SideBar from '../components/UI/SideBar/SideBar';
 
 class App extends Component {
   constructor(props) {

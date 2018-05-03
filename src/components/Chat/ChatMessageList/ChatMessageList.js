@@ -29,7 +29,7 @@ class ChatMessageList extends Component {
 
     render() {
         const { messages } = this.props;
-        let listOfMessages = messages.length ?  this.loadMessages(messages).reverse() : ['']    ;
+        let listOfMessages = messages.length ? this.loadMessages(messages).reverse() : [''];
         return (
             <div className='chat-loaded-content-container'>
 

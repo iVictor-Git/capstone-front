@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Body.css';
-// import Home from '../Home/Home';
-// import Register from '../Register/Register';
-// import Login from '../Login/Login';
-// import Chat from '../Chat/Chat';
-import ApartmentFinder from '../ApartmentFinder/ApartmentFinder';
-// import Profile from '../Profile/Profile';
+// import Home from './Home/Home';
+// import Register from '../../../containers/Forms/Register/Register';
+// import Login from '../../../containers/Forms/Login/Login';
+// import Chat from '../../Chat/Chat';
+import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
+// import Profile from '../../Profile/Profile';
 // import { defaultUserProfile } from '../../const/const';
 
 
@@ -19,7 +19,7 @@ class Body extends Component {
 
     renderContent = (route) => {
 
-}
+    }
 
     handleSignIn = (user) => {
         this.props.onSignIn(user)
@@ -27,7 +27,7 @@ class Body extends Component {
 
     render() {
         const { handleSignIn } = this;
-        const {api_keys} = this.props;
+        const { api_keys } = this.props;
         return (
             <div className='body-container col-7'>
                 {/* <Home /> */}
