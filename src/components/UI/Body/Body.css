@@ -1,0 +1,20 @@
+.body-container {
+    /* background-color: rgba(0, 0, blue, 1); */
+    overflow-y: scroll;
+    /* width: 85%; */
+    overflow-x: hidden;
+}
+
+.body-container::-webkit-scrollbar {
+    width: 0;
+}
+
+
+@media(max-width: 768px) {
+    .Body{ 
+        /* padding-left: 70px; */
+        z-index: 90;
+        position: relative;
+        width: 90%;
+    }
+}

@@ -1,0 +1,13 @@
+.NavItemList {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+
+@media (max-width: 768px) {
+    .NavItemList {
+        flex-flow: column;
+        height: 100%;
+        
+    }
+}

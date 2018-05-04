@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Chat.css';
-import ChatMessageList from '../ChatMessageList/ChatMessageList';
+import ChatMessageList from './ChatMessageList/ChatMessageList';
 
 class Chat extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class Chat extends Component {
         if (!this.props.user.id) {
             this.setState({ input: 'Please sign in' });
             setTimeout(() => {
-                this.setState({input: ''});     
+                this.setState({ input: '' });
             }, 2000);
         }
 

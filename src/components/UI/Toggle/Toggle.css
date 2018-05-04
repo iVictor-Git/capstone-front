@@ -1,0 +1,27 @@
+.Toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .Toggle {
+        margin: 5px 0 0 5px;
+        display: flex;
+        height: 60px;
+        width: 60px;
+        box-sizing: border-box;
+        background-color: rgba(23, 103, 169, 0.831);
+        z-index: 105;
+        position: fixed;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px .5px black;
+    }
+    .Toggle div {
+        height: 5px;
+        width: 80%;
+        background-color: white;
+        border-radius: 5px;
+    }
+}

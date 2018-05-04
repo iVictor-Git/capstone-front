@@ -1,9 +1,12 @@
 .component-title-container {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     height: 7%;
+    /* font-size: 1px; */
     display: flex;
     justify-content: center;
     align-content: center;
+    border-bottom: 1px solid black;
+
 }
 
 .component-title {

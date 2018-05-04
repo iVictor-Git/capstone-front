@@ -1,0 +1,21 @@
+.profile-component-avatar-container {
+    height: 30%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+
+.profile-avatar-img-container {
+    height: 200px;
+    width: 200px;
+    background-color: blueviolet;
+}
+
+.profile-avatar-img-container {
+    height: 200px;
+    width: 200px;
+}
