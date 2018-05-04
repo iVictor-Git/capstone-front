@@ -1,0 +1,11 @@
+
+.SideBar {
+    display: block;
+    /* float: right; */
+}
+@media (max-width: 899px) {
+    .SideBar {
+        display: none;
+    }
+}
+

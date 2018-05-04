@@ -1,0 +1,31 @@
+.NavBar {
+    width: 100vw;
+    height: 10%;
+}
+
+.SideDrawer {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .SideDrawer {
+        display: block;
+        padding-top: 70px;
+        width: 45%;
+        position: fixed;
+        height: 100vh;
+        z-index: 100;
+        transition: transform 300ms ease-in;
+        border-right: 1px solid black;
+        background-color: white;
+    }
+
+    .Show {
+        transform: translateX(0);
+    }
+
+    .Hide {
+        transform: translateX(-200%);
+    }
+}

@@ -1,0 +1,48 @@
+.Home {
+}
+
+.slighterAdjustment > *  {
+    margin: 0 7.5vw;
+    width: 85vw;
+    margin-bottom: 25px;
+}
+
+.slighterAdjustment h4, button, .center {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 33%;
+    border-radius: 50px;
+    background-color: rgba(0, 150, 255, .75);
+    padding: 16px 8px;
+    cursor: pointer;
+    /* margin: 0 auto;  */
+}
+
+button:hover {
+    background-color: rgba(0, 157, 133, 0.579);
+}
+
+@media(max-width: 768px) {
+    .Home {
+        width: 768px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: rgba(0, 150, 255, .75);
+    }
+
+    .slightAdjustment {
+        padding-top: 15px;
+        padding-left: 85px;
+    }
+
+    .slighterAdjustment {
+        padding-top: 25px;      
+    }
+
+}

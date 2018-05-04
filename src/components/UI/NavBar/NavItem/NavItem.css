@@ -1,0 +1,10 @@
+.NavItem {
+    font-size: 30px;
+    padding: 16px 16px;
+    box-sizing: border-box;
+}
+
+.NavItem:hover {
+    background-color: rgba(27, 123, 202, 0.674);
+    border-bottom: 2px solid blue;
+}
