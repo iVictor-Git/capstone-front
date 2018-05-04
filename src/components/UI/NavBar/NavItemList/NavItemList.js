@@ -1,14 +1,14 @@
 import React from 'react';
-import './NavItemList.css';
+import classes from './NavItemList.css';
 import NavItem from '../NavItem/NavItem'
 
 
-const NavItemList = ({options}) => {
+const NavItemList = ({ options }) => {
     const navOptions = options.map((option, index) => {
         return <NavItem key={index} name={option} />
     })
     return (
-        <div className='nav-list-container'>
+        <div className={classes.NavItemList}>
             {navOptions}
         </div>
     )

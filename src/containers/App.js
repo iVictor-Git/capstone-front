@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from '../components/UI/NavBar/NavBar';
-import './App.css';
+import SideDrawer from '../components/UI/NavBar/SideDrawer';
+import classes from './App.css';
 import Body from '../components/UI/Body/Body';
 import SideBar from '../components/UI/SideBar/SideBar';
 
@@ -48,15 +48,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className='app-container container-fluid'>
-        <div className='row'>
-          <NavBar />
-          <Body
-            onSignIn={this.loadUser}
-            user={this.state.user}
-            api_keys={this.state.api_keys} />
-          <SideBar />
-        </div>
+      <div className='App'>
+        <SideDrawer />
+        <Body
+          onSignIn={this.loadUser}
+          user={this.state.user}
+          api_keys={this.state.api_keys} />
+        <SideBar />
       </div>
     );
   }

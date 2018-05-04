@@ -1,14 +1,10 @@
 import React from 'react';
-import './NavItem.css';
+import classes from './NavItem.css';
 
 const NavItem = ({ name }) => {
     return (
-        <div className='nav-item-container'>
-            <div className='nav-item-text-container btn'>
-                <div className='nav-item-text-box'>
-                    {name}
-                </div>
-            </div>
+        <div className={classes.NavItem}>
+            {name}
         </div>
     )
 }

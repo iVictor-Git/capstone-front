@@ -1,7 +1,13 @@
-.nav-list-container {
+.NavItemList {
     display: flex;
-    flex-direction: column;
     /* justify-content: space-evenly; */
-    /* align-content: center; */
-    /* border: 1px solid black; */
+}
+
+
+@media (max-width: 768px) {
+    .NavItemList {
+        flex-flow: column;
+        height: 100%;
+        
+    }
 }

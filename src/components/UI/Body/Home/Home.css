@@ -1,47 +1,48 @@
-.home-container {
-    /* z-index: 20;     */
-    margin-left: 1vw;
+.Home {
 }
 
-.home-container, .home-title-container {
-    /* border: 1px solid black; */
-    padding-bottom: 2vh;
+.slighterAdjustment > *  {
+    margin: 0 7.5vw;
+    width: 85vw;
+    margin-bottom: 25px;
 }
 
-.home-title-container {
-    /* font-size: 10vw; */
-    /* margin-top: 1vw; */
-    /* background-color: rgba(3, 126, 199, 0.8); */
-    background-color: white;
-    /* margin-left: 18.5vw; */
-    text-align: center;
-    width: 96.5%;
+.slighterAdjustment h4, button, .center {
+    display: flex;
+    justify-content: center;
 }
 
-.home-title-container h1{
-    font-size: 5vh;
-    margin-top: 1vh;
-    margin-bottom: 3vh;
+button {
+    width: 33%;
+    border-radius: 50px;
+    background-color: rgba(0, 150, 255, .75);
+    padding: 16px 8px;
+    cursor: pointer;
+    /* margin: 0 auto;  */
 }
 
-.home-container > * {
-    color: black;
+button:hover {
+    background-color: rgba(0, 157, 133, 0.579);
 }
 
-.home-title-container > p {
-    font-size: 1.25vw;
-}
+@media(max-width: 768px) {
+    .Home {
+        width: 768px;
+        height: auto;
+    }
 
-.home-sign-up-btn {
-    width: 8vw;
-    height: auto;
-    font-size: 2.5vh;
-    background-color: rgba(0, 160, 255, 0.8);
-    color: black;
-    margin-bottom: 2vh;
-}
+    h1 {
+        font-size: 42px;
+        color: rgba(0, 150, 255, .75);
+    }
 
-.home-sign-up-btn:hover {
-    background-color: rgba(0, 115, 182, 1);
-    color: white;
+    .slightAdjustment {
+        padding-top: 15px;
+        padding-left: 85px;
+    }
+
+    .slighterAdjustment {
+        padding-top: 25px;      
+    }
+
 }
