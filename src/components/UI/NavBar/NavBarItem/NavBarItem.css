@@ -1,0 +1,24 @@
+.NavBarItem {
+    width: 25%;
+    height: 100%;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.NavBarItem:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid black;
+}
+
+.Active {
+    background-color: rgba(0, 150, 180, .64524)
+}
+
+@media (max-width: 768px) {
+    .NavBarItem {
+        padding: 5px 0;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SideDrawer from '../components/UI/NavBar/SideDrawer';
+import SideDrawer from '../components/UI/SideDrawer/SideDrawer';
 import classes from './App.css';
 import Body from '../components/UI/Body/Body';
 import SideBar from '../components/UI/SideBar/SideBar';
@@ -48,7 +48,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className={classes.App}>
         <SideDrawer />
         <Body
           onSignIn={this.loadUser}

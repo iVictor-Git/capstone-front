@@ -1,6 +1,9 @@
 .NavBar {
-    width: 100vw;
+    width: 100%;
     height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 10px;
 }
 
 .SideDrawer {

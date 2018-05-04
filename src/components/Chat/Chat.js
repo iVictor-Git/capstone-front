@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './Chat.css';
+import classes from './Chat.css';
 import ChatMessageList from './ChatMessageList/ChatMessageList';
+import NavBar from '../UI/NavBar/NavBar';
 
 class Chat extends Component {
     constructor(props) {
@@ -75,19 +76,21 @@ class Chat extends Component {
     }
 
     render() {
+        const items = ['All', 'Group', 'Private'];
         return (
-            <div className='chat-component-container'>
-                <div className='chat-content-container container-fluid'>
-                    <div className='chat-content-title'>
+            <div className={classes.Chat}>
+                <div className={classes.Container}>
+                    <div className={classes.Title}>
                         <h1>Chat</h1>
                     </div>
 
                     <div className='chat-container rounded'>
-                        <nav className='chat-menu'>
+                        {/* <nav className='chat-menu'>
                             <div className='chat-menu-item btn'>All</div>
                             <div className='chat-menu-item btn'>Group</div>
                             <div className='chat-menu-item btn'>Private</div>
-                        </nav>
+                        </nav> */}
+                        <NavBar items={items} />
 
                         {/* Chat message component */}
                         <ChatMessageList messages={this.state.messages} />
