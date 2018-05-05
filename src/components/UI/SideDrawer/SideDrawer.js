@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import classes from './NavBar.css';
+import classes from '../NavBar/NavBar.css';
 import NavItemList from './NavItemList/NavItemList';
-import Toggle from '../Toggle/Toggle';
+import Toggle from './Toggle/Toggle';
 import Backdrop from '../Backdrop/Backdrop';
 
 class SideDrawer extends Component {

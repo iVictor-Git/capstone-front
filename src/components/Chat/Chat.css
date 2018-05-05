@@ -1,64 +1,27 @@
-.chat-component-container {
-    /* margin: 0 auto; */
-    height: auto;
-}
-
-.chat-content-container {
-    width: 90%;
+.Chat {
     margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
 }
 
-.chat-content-title {
+.Container, .Chat {
+    box-sizing: border-box;
+}
+
+.Title, .Chat {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.chat-container {
-    border: 1px solid black;
-    height: 87vh;
-    /* border-radius: 10%; */
-}
+@media (max-width: 768px) {
+    .Chat {
+    }
 
-.chat-menu {
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: 1px solid black;
-    background-color: gray;
-    height: 5%;
+    .Container {
+        height: 100%;
+        width: 77%;
+        border: 1px solid black;
+        padding: 25px 50px;
+    }  
 }
-
-.chat-menu-item {
-    width: 9%;
-    cursor: pointer;
-    /* border: 1px solid black; */
-    background-color: white;
-    display: inherit;
-    justify-content: inherit;
-    /* border-radius: 10%; */
-}
-
-
-.chat-form-container{
-    height: 7%;
-    display: flex;
-}
-
-.chat-form-container .form-group {
-    margin-bottom: 0;
-    height: 100%;
-    /* max-height: 150%; */
-}
-
-.chat-form-container .chat-form-chat-input {
-    /* height: auto; */
-    width: 80%
-}
-.chat-form-container .chat-form-chat-submit {
-    height: 100%;
-    width: 20%;
-}
-
-.chat-form-container .chat-form-chat-input input[type='text'] {
-    max-height: 200%;
-}
-
