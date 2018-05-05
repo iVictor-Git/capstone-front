@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChatMessage from '../ChatMessage/ChatMessage';
-import './ChatMessageList.css';
+import classes from './ChatMessageList.css';
 
 class ChatMessageList extends Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class ChatMessageList extends Component {
         const { messages } = this.props;
         let listOfMessages = messages.length ? this.loadMessages(messages).reverse() : [''];
         return (
-            <div className='chat-loaded-content-container'>
+            <div className={classes.ChatMessageList}>
 
                 <div style={{ float: "left", clear: "both" }}
                     ref={(el) => { this.messagesEnd = el; }}>

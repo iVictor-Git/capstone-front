@@ -2,11 +2,11 @@ div.InputRow {
     width: 90%;
     display: flex;
     margin: 0 auto;
-    padding-bottom: 10px;
+    padding-bottom: 5px;;
 }
 
 @media (max-width: 768px) {
     div.InputRow {
-        margin-bottom: 13px;
+        margin-bottom: 10px;
     }
 }

@@ -1,48 +1,44 @@
-.login-container {
+.Login {
+    width: 100vw;
     height: 100vh;
-    width: 50vw;
-    /* padding: 0 auto; */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: rgba(31, 126, 174, 0.673);
 }
 
-.login-inner-container {
-    box-shadow: 1px 1px 4px 1px black;
-    padding-top: 2vh;
-    padding-bottom: 10vh;
+.Container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 black;
 }
 
-.login-inner-inner-container {
-    box-shadow: 1px 1px 1px 1px teal;    
-    margin: 0 6vw;
-}
-
-.login-form-container {
-    padding-top: 4vh;
-
-}
-
-.login-form-container .container {
-    padding-bottom: 2vh; 
-}
-
-.login-title {
-    padding-top: 0;
-    padding-bottom: 1.5vh;
+.Title, .Login {
     display: flex;
     justify-content: center;
-}
+    align-items: center;
+    }
 
-.login-form-container .container form .row {
-    margin-left: 0;
-    margin-right: 0;
-}
-.login-form-container .container form .login-submit-container {
-    display: flex;
-    justify-content: center;
-    /* margin-left: 1.5vw; */
-    height: auto;
-    width: 100%;
+@media (max-width: 768px) {
+    .Container {
+        width: 80%;
+        height: auto;
+    }
+
+    .Title {
+        padding-top: 10px;
+    }
+
+    .Form {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .Submit {
+        width: 33%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+
+    .Submit input[type="submit"]:disabled {
+        cursor: not-allowed;
+    }
 }

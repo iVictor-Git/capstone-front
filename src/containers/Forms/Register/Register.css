@@ -27,17 +27,18 @@ cursor: not-allowed;
 
 @media (max-width: 768px) {
     .Register {
-        height: 100vh;
-        width: 100%;
+        height: auto;
+        width: 100vw;
         background-color: rgba(31, 126, 174, 0.673);
         display: flex;
         justify-content: center;
-        align-items: center;  
+        align-items: center;
+        padding: 25px 0;  
     }
 
     .Register .Container {
         background-color: #fff;
-        height: auto;
+        height: 90%;
         border-radius: 15px;   
         box-shadow: 0 0 2px black;        
     }
@@ -48,6 +49,9 @@ cursor: not-allowed;
         padding-top: 25px;
         display: flex;
         justify-content: center;
+    }
+    div.Title h1 {
+        font-size: 30px;
     }
 
     .Form {
@@ -63,7 +67,7 @@ cursor: not-allowed;
 
     .Submit div {
         width: 35%;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
 

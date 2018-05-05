@@ -31,8 +31,8 @@ class Body extends Component {
         return (
             <div className={classes.Body}>
                 {/* <Home /> */}
-                {/* <Register onSignIn={handleSignIn} />
-                <Login onSignIn={handleSignIn} /> */}
+                {/* <Register onSignIn={handleSignIn} /> */}
+                {/* <Login onSignIn={handleSignIn} /> */}
                 <Chat user={this.props.user} />
                 {/* <ApartmentFinder api_keys={api_keys} /> */}
                 {/* <Profile 

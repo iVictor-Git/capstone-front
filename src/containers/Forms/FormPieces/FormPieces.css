@@ -68,9 +68,11 @@ div.Term{
 
 div.Term label {
     margin-bottom: 0;
+    font-size: 12px;
 }
 
 div.Term label span {
     color: rgba(81, 203, 238, 1);
+    cursor: pointer;
 }
 
