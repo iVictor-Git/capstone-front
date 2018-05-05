@@ -84,30 +84,24 @@ class Chat extends Component {
                         <h1>Chat</h1>
                     </div>
 
-                    <div className='chat-container rounded'>
-                        {/* <nav className='chat-menu'>
+                    {/* <nav className='chat-menu'>
                             <div className='chat-menu-item btn'>All</div>
                             <div className='chat-menu-item btn'>Group</div>
                             <div className='chat-menu-item btn'>Private</div>
                         </nav> */}
-                        <NavBar items={items} />
+                    <NavBar items={items} />
 
-                        {/* Chat message component */}
-                        <ChatMessageList messages={this.state.messages} />
+                    {/* Chat message component */}
+                    <ChatMessageList messages={this.state.messages} />
 
-                        <div className='chat-input-container'>
-                            <form onSubmit={this.handleSubmit}>
-                                <div className='chat-form-container'>
-                                    <div className='form-group chat-form-chat-input'>
-                                        {/* TODO ALLOW INPUT TO RESIZE HEIGHT AFTER CERTAIN LENGTH */}
-                                        <input className='form-control' maxLength='98' onChange={this.handleChange} type="text" value={this.state.input} />
-                                    </div>
-                                    <div className='form-group chat-form-chat-submit'>
-                                        <input className='form-control' type="submit" value="Enter" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <div >
+                        <form onSubmit={this.handleSubmit}>
+                            <div className={classes.ChatControls}>
+                                {/* TODO ALLOW INPUT TO RESIZE HEIGHT AFTER CERTAIN LENGTH */}
+                                <input maxLength='98' onChange={this.handleChange} type="text" value={this.state.input} />
+                                <input type="submit" value="Enter" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

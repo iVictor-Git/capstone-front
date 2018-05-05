@@ -1,7 +1,9 @@
 .Chat {
     margin: 0 auto;
-    height: 100vh;
+    box-sizing: border-box;
+    height: auto;
     width: 100vw;
+    padding: 25px 15px;
 }
 
 .Container, .Chat {
@@ -16,12 +18,51 @@
 
 @media (max-width: 768px) {
     .Chat {
+    background-color: rgba(23, 103, 169, 0.831);
     }
 
     .Container {
-        height: 100%;
+        background-color: white;
+    }
+
+    .Title {
+        font-size: 25px
+    }
+
+    .Container {
+        height: auto;
         width: 77%;
-        border: 1px solid black;
-        padding: 25px 50px;
+        padding: 15px;
     }  
+    
+    .ChatControls {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .ChatControls input[type="text"] {
+        border: 1px solid rgba(100, 100, 100, .5);
+        width: 75%;
+        transition: all 0.2s ease-in;
+    }
+    
+    .ChatControls input[type="submit"] {
+        width: 25%;
+        background-color: rgba(31, 138, 226, 0.831);
+    }
+    
+    .ChatControls input {
+        padding: 3px 6px;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .ChatControls input[type="text"]:focus {
+        box-shadow: 0 0 8px 0 rgba(23, 103, 169, 0.831);
+        border: none;
+    }
+    
+    .ChatControls input[type="submit"]:hover {
+        background-color: rgba(59, 155, 233, 0.831);
+    }    
 }
