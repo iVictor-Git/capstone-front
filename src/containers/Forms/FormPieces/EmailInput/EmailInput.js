@@ -1,5 +1,6 @@
 import React from 'react';
 import InputRow from '../InputRow/InputRow';
+import classes from '../FormPieces.css';
 
 const EmailInput = ({ onChange, errors, autofocus }) => {
 
@@ -10,8 +11,8 @@ const EmailInput = ({ onChange, errors, autofocus }) => {
 
     return (
         <InputRow>
-            <div className='form-group col-12 row'>
-                <input className='form-control col-12' autoFocus={autofocus} onChange={handleChange} type="email" placeholder={'Email'} name={'email'} required />
+            <div style={{ width: '100%' }}>
+                <input autoFocus={autofocus} onChange={handleChange} type="email" placeholder={'Email'} name={'email'} required />
                 <div className='text-danger'>{errors.email}</div>
             </div>
         </InputRow>

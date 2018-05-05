@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import EmailInput from '../EmailInput/EmailInput';
-import PasswordInput from '../PasswordInput/PasswordInput';
+import EmailInput from '../FormPieces/EmailInput/EmailInput';
+import PasswordInput from '../FormPieces/PasswordInput/PasswordInput';
 import validator from 'validator';
 
 class Login extends Component {
@@ -28,7 +28,7 @@ class Login extends Component {
     }
 
     // set errors
-    setError = (errors = {}, name = '',) => {
+    setError = (errors = {}, name = '', ) => {
         errors[name].isNotValid = true;
         // errors[name].message = `${errors[name].field} ${error}`;
     }
@@ -110,16 +110,16 @@ class Login extends Component {
             }
             fetch('http://localhost:3000/login', {
                 method: 'post',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(credentials)
             })
-            .then(response => response.json())
-            .then(user => this.handleSignIn(user))
-            .catch(err => console.log(err));
+                .then(response => response.json())
+                .then(user => this.handleSignIn(user))
+                .catch(err => console.log(err));
         }
     }
 
-    handleSignIn = (user = {id: '', name: ''}) => {
+    handleSignIn = (user = { id: '', name: '' }) => {
         this.props.onSignIn(user);
         // console.log('User loaded');
     }

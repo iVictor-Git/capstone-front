@@ -1,0 +1,76 @@
+.w100 {
+    width: 100%;
+}
+
+.w90 {
+    width: 90%;
+}
+
+.w66 {
+    width: 66%;
+}
+
+.w45 {
+    width: 45%;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w15 {
+    width: 15%;
+}
+
+.pr3 {
+    padding-right: 3%;
+}
+
+.pr5 {
+    padding-right: 5%;
+}
+
+.pr10 {
+    padding-right: 10%;
+}
+
+input, select {
+    transition: all 250ms ease-in-out;    
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(81, 203, 238, 1);
+}
+
+input {
+    padding: 5px 0 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+select {
+    padding: 7.5px 0 7.5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input.Term {
+    width: auto;
+    height: 100%;
+}
+
+div.Term{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.Term label {
+    margin-bottom: 0;
+}
+
+div.Term label span {
+    color: rgba(81, 203, 238, 1);
+}
+

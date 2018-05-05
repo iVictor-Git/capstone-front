@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './Register.css';
-import NameInput from '../NameInput/NameInput';
-import AddressInput from '../AddressInput/AddressInput';
-import CountryInput from '../CountryInput/CountryInput';
-import PhoneInput from '../PhoneInput/PhoneInput';
-import EmailInput from '../EmailInput/EmailInput';
-import PasswordInput from '../PasswordInput/PasswordInput';
-import TermInput from '../TermInput/TermInput';
-import { errorsRegisterInitialState  } from '../../const/const';
+import classes from './Register.css';
+import NameInput from '../FormPieces/NameInput/NameInput';
+import AddressInput from '../FormPieces/AddressInput/AddressInput';
+import CountryInput from '../FormPieces/CountryInput/CountryInput';
+import PhoneInput from '../FormPieces/PhoneInput/PhoneInput';
+import EmailInput from '../FormPieces/EmailInput/EmailInput';
+import PasswordInput from '../FormPieces/PasswordInput/PasswordInput';
+import TermInput from '../FormPieces/TermInput/TermInput';
+import { errorsRegisterInitialState } from '../../../const/const';
 import validator from 'validator';
-import {states} from '../../const/const';
+import { states } from '../../../const/const';
 
 class Register extends Component {
     constructor(props) {
@@ -180,69 +180,62 @@ class Register extends Component {
         // console.log(this.state.isValidForm, this.state.agree);
 
         return (
-            <div className='register-container'>
-                <div className='register-inner-container rounded'>
-
-                    <div className='register-form-container container'>
-                        <div className='register-title'>
-                            <h1>Register</h1>
-                        </div>
-
-                        <div className='container col-10 pt-2'>
-                            <form className='' onSubmit={this.handleSubmit}>
-                                <NameInput onChange={handleChange}
-                                    errors={
-                                        {
-                                            first: errors.first.message,
-                                            last: errors.last.message,
-                                        }} />
-
-                                <AddressInput onChange={handleChange} name='address' errors={{ address: errors.address.message }} />
-
-                                < AddressInput onChange={handleChange} name={'address2'} errors={{ address: null }} />
-
-                                <CountryInput onChange={handleChange}
-                                    errors={{
-                                        city: errors.city.message,
-                                        state: errors.state.message,
-                                        zip: errors.zip.message,
-                                    }} />
-
-                                <PhoneInput onChange={handleChange}
-                                    errors={{
-                                        area: errors.area.message,
-                                        phone: errors.number.message,
-                                    }} />
-
-                                <EmailInput onChange={handleChange}
-                                    errors={{
-                                        email: errors.email.message,
-                                    }} />
-
-                                <PasswordInput name='password' placeholder='Password' onChange={handleChange}
-                                    errors={{
-                                        password: errors.password.message,
-                                    }} />
-                                <PasswordInput name='verify' placeholder='Verify' onChange={handleChange}
-                                    errors={{
-                                        password: errors.verify.message,
-                                    }} />
-
-                                {/* Terms form component */}
-                                <TermInput onChange={handleChange} />
-
-                                {/* button/submit component */}
-                                <div className='row component-input-form-container'>
-                                    <div className='offset-4'></div>
-                                    <div className='form-group col-4 row'>
-                                        <input className='form-control col-12 component-submit' type="submit" value='Register' disabled={isDisabled} />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
+            <div className={classes.Register}>
+                <div className={classes.Container}>
+                    <div className={classes.Title}>
+                        <h1>Register</h1>
                     </div>
+                    <div className={classes.Form}>
+                        <form className='' onSubmit={this.handleSubmit}>
+                            <NameInput onChange={handleChange}
+                                errors={
+                                    {
+                                        first: errors.first.message,
+                                        last: errors.last.message,
+                                    }} />
 
+                            <AddressInput onChange={handleChange} name='address' errors={{ address: errors.address.message }} />
+
+                            < AddressInput onChange={handleChange} name={'address2'} errors={{ address: null }} />
+
+                            <CountryInput onChange={handleChange}
+                                errors={{
+                                    city: errors.city.message,
+                                    state: errors.state.message,
+                                    zip: errors.zip.message,
+                                }} />
+
+                            <PhoneInput onChange={handleChange}
+                                errors={{
+                                    area: errors.area.message,
+                                    phone: errors.number.message,
+                                }} />
+
+                            <EmailInput onChange={handleChange}
+                                errors={{
+                                    email: errors.email.message,
+                                }} />
+
+                            <PasswordInput name='password' placeholder='Password' onChange={handleChange}
+                                errors={{
+                                    password: errors.password.message,
+                                }} />
+                            <PasswordInput name='verify' placeholder='Verify' onChange={handleChange}
+                                errors={{
+                                    password: errors.verify.message,
+                                }} />
+
+                            {/* Terms form component */}
+                            <TermInput onChange={handleChange} />
+
+                            {/* button/submit component */}
+                            <div className={classes.Submit}>
+                                <div>
+                                    <input className={classes.Submit} type="submit" value='Register' disabled={isDisabled} />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         )
