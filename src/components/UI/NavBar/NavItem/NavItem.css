@@ -6,5 +6,5 @@
 
 .NavItem:hover {
     background-color: rgba(27, 123, 202, 0.674);
-    border-bottom: 2px solid blue;
+    border-bottom: 3px solid  rgba(23, 103, 169, 0.831);
 }

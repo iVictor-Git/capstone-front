@@ -1,5 +1,6 @@
 import React from 'react';
 import InputRow from '../InputRow/InputRow';
+import classes from '../FormPieces.css';
 
 const TermInput = ({ onChange }) => {
 
@@ -8,9 +9,9 @@ const TermInput = ({ onChange }) => {
     }
     return (
         <InputRow>
-            <div className='form-group col-12 tos-container'>
-                <input className='form-control terms-checkbox' onChange={handleChange} id='terms-checkbox' type="checkbox" name='agree' />
-                <label className='' htmlFor='terms-checkbox' >You agree to our <span className='tos-pp' href='#'>Terms of Service</span> and <span className='tos-pp' href='#'>Privacy Policy</span>.</label>
+            <div style={{ width: '100%' }} className={classes.Term}>
+                <input className={classes.Term} onChange={handleChange} id='terms-checkbox' type="checkbox" name='agree' />
+                <label htmlFor='terms-checkbox' >You agree to our <span className='tos-pp' href='#'>Terms of Service</span> and <span className='tos-pp' href='#'>Privacy Policy</span>.</label>
             </div>
         </InputRow>
     );

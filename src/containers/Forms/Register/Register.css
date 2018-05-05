@@ -1,82 +1,70 @@
-.register-container {
-    height: 100vh;
-    width: 59.45vw;
-    /* background-color: gray; */
-    padding-top: 3%;
-}
-
-.register-inner-container {
-    height: 95%;
-    width: 70%;
-    /* border: 1px solid black; */
+.Form {
+    width: 90%;
     margin: 0 auto;
-    background-color: white;
-    color: black;
-    box-shadow: 1px 1px 8px black;
-    
 }
 
-.register-inner-container div form div.row {
-    margin: 0 0 0 0;
+.Register div{
+    width: 78%;    
 }
 
-.register-container, 
-.register-container > * {
-    /* border: 1px solid black; */
+form {
+    width: 100%;
 }
 
-.register-title {
-    margin-bottom: 2vh;
-    padding-top: 1vh;
-    padding-bottom: .7vh;
-    border-bottom: 1px solid black;
-    text-align: center;
+input.Submit {
+    box-sizing: border-box;
+    background-color: rgba(23, 103, 169, 0.831);
+    color: white;
+    padding: 10px 75px;
 }
 
-.component-input-form-container {
-    display: flex;
+input.Submit:disabled {
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, .5);
+color: white;
+cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .Register {
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(31, 126, 174, 0.673);
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .Register .Container {
+        background-color: #fff;
+        height: auto;
+        border-radius: 15px;   
+        box-shadow: 0 0 2px black;        
+    }
+
+    div.Title {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 25px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Form {
     margin: 0 auto;
-    height: 7.2vh;
-}
+    }
 
-.component-input-form-container div .col-2 {
-    margin-bottom: 0;
-}
+    .Submit {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
 
-.tos-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 1vw;
-}
+    .Submit div {
+        width: 35%;
+        margin-bottom: 25px;
+    }
 
-.terms-checkbox {
-    margin-right: 1vw;
-    margin-top: 0vh;
-    width: 1vw;
-}
 
-.tos-pp {
-    color: rgba(244, 68, 54, 1);
-}
-
-.terms-checkbox,
-.tos-pp:hover,
-.component-submit {
-    cursor: pointer;
-}
-
-div.form-group div.text-danger,
-.tos-container label span, 
-.tos-container label {
-    font-size: .8vw;
-}
-
-.component-input-form-container .form-group .form-control,
-.component-input-form-container .form-group select.form-control {
-    height: 4.5vh;
-}
-
-.tos-container label {
-    margin-top: .8vh;
 }

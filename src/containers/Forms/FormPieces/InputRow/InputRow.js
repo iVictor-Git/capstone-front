@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from './InputRow.css';
 
 const InputRow = ({ children }) => {
 
     return (
-        <div className='row component-input-form-container'>
+        <div className={classes.InputRow}>
             {children}
         </div>
     );
