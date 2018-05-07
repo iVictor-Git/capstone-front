@@ -1,7 +1,16 @@
 .Login {
     width: 100vw;
-    height: 100vh;
-    background-color: rgba(31, 126, 174, 0.673);
+    height: auto;
+    margin-top: 25vh;
+    /* background-color: rgba(31, 126, 174, 0.673); */
+}
+
+.Title {
+    padding: 10px;
+}
+
+.Title > * {
+    margin: 0;
 }
 
 .Container {
@@ -9,6 +18,8 @@
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 0 0 5px 0 black;
+    height: auto;
+    width: 70%;
 }
 
 .Title, .Login {
@@ -16,6 +27,12 @@
     justify-content: center;
     align-items: center;
     }
+
+.Submit {
+    margin: 0 auto;
+    width: 33%;
+    padding: 0 0 20px 0;
+}
 
 @media (max-width: 768px) {
     .Container {
@@ -33,8 +50,7 @@
     }
 
     .Submit {
-        width: 33%;
-        margin: 0 auto;
+        padding: 0;
         padding-bottom: 15px;
     }
 

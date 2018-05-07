@@ -5,7 +5,7 @@ import NavItems from './NavItems/NavItems';
 const NavBar = (props) => {
     return (
         <nav className={classes.NavBar}>
-            <NavItems options={props.items} />
+            <NavItems options={props.options} />
         </nav>
     )
 }

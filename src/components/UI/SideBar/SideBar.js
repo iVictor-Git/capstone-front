@@ -6,7 +6,6 @@ const SideBar = () => {
     return (
         <div className={classes.SideBar}>
             <ArticleList />
-
         </div>
 
     )

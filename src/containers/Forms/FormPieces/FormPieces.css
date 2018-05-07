@@ -76,3 +76,17 @@ div.Term label span {
     cursor: pointer;
 }
 
+@media (min-width: 768px) {
+    div.Term {
+        display: flex;
+        justify-content: center;
+    }   
+
+    div.Term > input {
+        margin-right: 25px;
+    }
+
+    div.Term > label {
+        font-size: 15px
+    }
+}

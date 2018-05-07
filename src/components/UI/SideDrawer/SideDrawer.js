@@ -16,14 +16,13 @@ class SideDrawer extends Component {
     }
 
     render() {
-        const navOptions = ['Home', 'About', 'Contact', 'Services', 'Products', 'Career', 'Help']
         const show = this.state.show ? classes.Show : classes.Hide;
         return (
             <React.Fragment>
                 <Backdrop show={this.state.show} click={this.toggleHander} />
                 <Toggle click={this.toggleHander} />
                 <nav className={[classes.SideDrawer, show].join(' ')}>
-                    <NavItemList options={navOptions} />
+                    <NavItemList options={this.props.options} />
                 </nav>
             </React.Fragment>
         )
