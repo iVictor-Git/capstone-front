@@ -3,15 +3,15 @@ import './Article.css';
 
 const Article = ({ text }) => {
     return (
-        <div className='article-item-container row'>
-            <div className='article-item-img-container col-6'>
+        <div className=''>
+            <div className=''>
                 <div>
                     <img src="" alt="" />
 
                 </div>
             </div>
 
-            <div className='article-item-text-container col-6'>
+            <div className=''>
                 <div>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur nihil liber.
                 </div>

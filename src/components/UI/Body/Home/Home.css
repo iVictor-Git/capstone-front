@@ -1,9 +1,12 @@
-.Home {
+@media(max-width: 992px) {
+    .Home, .slightAdjustment {
+        width: 66%;
+        float: left;
+    }
 }
 
 .slighterAdjustment > *  {
     margin: 0 7.5vw;
-    width: 85vw;
     margin-bottom: 25px;
 }
 
