@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SideDrawer from '../components/UI/SideDrawer/SideDrawer';
 import classes from './App.css';
 import Body from '../components/UI/Body/Body';
-import SideBar from '../components/UI/SideBar/SideBar';
+import NavBar from '../components/UI/NavBar/NavBar';
 
 class App extends Component {
   constructor(props) {
@@ -47,14 +47,16 @@ class App extends Component {
   }
 
   render() {
+    const navOptions = ['Home', 'About', 'Contact', 'Services', 'Products', 'Career', 'Help']
+
     return (
       <div className={classes.App}>
-        <SideDrawer />
+        <NavBar options={navOptions} />
+        <SideDrawer options={navOptions} />
         <Body
           onSignIn={this.loadUser}
           user={this.state.user}
           api_keys={this.state.api_keys} />
-        <SideBar />
       </div>
     );
   }

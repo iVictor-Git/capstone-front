@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Home.css';
 import Carousel from '../Carousel/Carousel';
+import SideBar from '../components/UI/SideBar/SideBar';
 
 
 const Home = () => {
@@ -19,6 +20,8 @@ const Home = () => {
                     <button>Sign up</button>
                 </div>
             </div>
+            <SideBar />
+
         </div>
     )
 }

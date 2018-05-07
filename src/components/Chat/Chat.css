@@ -2,8 +2,6 @@
     margin: 0 auto;
     box-sizing: border-box;
     height: auto;
-    width: 100vw;
-    padding: 25px 15px;
 }
 
 .Container, .Chat {
@@ -14,11 +12,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 90vw;    
 }
 
 @media (max-width: 768px) {
     .Chat {
     background-color: rgba(23, 103, 169, 0.831);
+    padding: 25px 15px;    
     }
 
     .Container {
