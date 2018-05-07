@@ -1,10 +1,32 @@
-.Form {
+.Register {
+    height: auto;
+}
+
+.Title, .Register, .Submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container {
+    margin: 25px 0;
+    height: auto;
+    box-shadow: 0 0 5px 0 black;
+}
+
+.Title {
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.Container .Form {
     width: 90%;
     margin: 0 auto;
+
 }
 
 .Register div{
-    width: 78%;    
+    width: 60%;    
 }
 
 form {
@@ -16,6 +38,10 @@ input.Submit {
     background-color: rgba(23, 103, 169, 0.831);
     color: white;
     padding: 10px 75px;
+}
+
+.Register .Submit {
+    margin: 0 auto 10px auto;
 }
 
 input.Submit:disabled {
@@ -30,9 +56,6 @@ cursor: not-allowed;
         height: auto;
         width: 100vw;
         background-color: rgba(31, 126, 174, 0.673);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 25px 0;  
     }
 
@@ -41,6 +64,10 @@ cursor: not-allowed;
         height: 90%;
         border-radius: 15px;   
         box-shadow: 0 0 2px black;        
+    }
+
+    .Register div {
+        width: 78%;
     }
 
     div.Title {
@@ -69,6 +96,5 @@ cursor: not-allowed;
         width: 35%;
         margin-bottom: 15px;
     }
-
 
 }

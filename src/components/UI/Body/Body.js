@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Body.css';
 // import Home from './Home/Home';
-// import Register from '../../../containers/Forms/Register/Register';
-import Login from '../../../containers/Forms/Login/Login';
+import Register from '../../../containers/Forms/Register/Register';
+// import Login from '../../../containers/Forms/Login/Login';
 // import Chat from '../../Chat/Chat';
 // import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
 // import Profile from '../../Profile/Profile';
@@ -31,8 +31,8 @@ class Body extends Component {
         return (
             <div className={classes.Body}>
                 {/* <Home /> */}
-                {/* <Register onSignIn={handleSignIn} /> */}
-                <Login onSignIn={handleSignIn} />
+                <Register onSignIn={handleSignIn} />
+                {/* <Login onSignIn={handleSignIn} /> */}
                 {/* <Chat user={this.props.user} /> */}
                 {/* <ApartmentFinder api_keys={api_keys} /> */}
                 {/* <Profile 

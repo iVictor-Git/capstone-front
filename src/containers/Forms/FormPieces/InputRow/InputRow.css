@@ -7,6 +7,7 @@ div.InputRow {
 
 @media (max-width: 768px) {
     div.InputRow {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 0;
     }
 }
