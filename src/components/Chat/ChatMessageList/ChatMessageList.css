@@ -1,6 +1,8 @@
 .ChatMessageList {
     /* min-height: 0px; */
-    height: 89.4%;
+    height: 75vh;
+    width: 90vw;
+    border: 1px solid gray;
     border-bottom: 1px solid black;
     overflow-y: auto;
     overflow-x: hidden;
