@@ -28,3 +28,20 @@ div.article-item-container.row {
 .article-item-img-container, .article-item-text-container {
     height: 100%;
 }
+
+.Article {
+    display: flex;
+}
+
+.Article div {
+    width: 100%;
+}
+
+.Article .Content {
+    height: auto;
+    height: 65%;
+    width: 35%;
+}
+
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ArticleList.css';
+import classes from './ArticleList.css';
 import Article from '../Article/Article';
 
 const ArticleList = () => {
@@ -10,10 +10,8 @@ const ArticleList = () => {
     });
 
     return (
-        <div className=''>
-            <div className=''>
-                {articles}
-            </div>
+        <div className={classes.ArticleList}>
+            {articles}
         </div>
     );
 }
