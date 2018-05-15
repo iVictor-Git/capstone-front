@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ApartmentFinder.css';
+// import Map from '../Map/Map';
 
 class ApartmentFinder extends Component {
     constructor(props) {
@@ -96,7 +97,13 @@ class ApartmentFinder extends Component {
 
                 <div className='apartment-finder-results-to-display-container'>
                     <div className='apartment-finder-map-results-container'>
-
+                        {/* <Map
+                            isMarkerShown
+                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                            loadingElement={<div style={{ height: `100%` }} />}
+                            containerElement={<div style={{ height: `400px` }} />}
+                            mapElement={<div style={{ height: `100%` }} />}
+                        /> */}
                     </div>
                 </div>
 
