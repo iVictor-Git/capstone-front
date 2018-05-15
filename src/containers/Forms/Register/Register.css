@@ -12,6 +12,8 @@
     margin: 25px 0;
     height: auto;
     box-shadow: 0 0 5px 0 black;
+    max-width: 560px;    
+    min-width: 540px;
 }
 
 .Title {
@@ -64,6 +66,10 @@ cursor: not-allowed;
         height: 90%;
         border-radius: 15px;   
         box-shadow: 0 0 2px black;        
+    }
+
+    .Container {
+        min-width: 450px;
     }
 
     .Register div {
