@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './ApartmentFinder.css';
-// import Map from '../Map/Map';
+import Map from '../Map/Map';
+
+// IMPORTANT -> functionality works, just need a better place to grab data.
 
 class ApartmentFinder extends Component {
     constructor(props) {
@@ -39,7 +40,55 @@ class ApartmentFinder extends Component {
                     "pubDate": "2018-2-7"
                 }
             }],
+            apiKeys: {
+                googleMapsFull: ''
+            },
+            apiKeysLoaded: false,
+            center: {
+                lat: '',
+                lng: ''
+            },
+            error: {
+                code: '',
+                message: ''
+            }
         }
+    }
+
+    componentDidMount() {
+        fetch(`http://localhost:3000/`, {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                password: '12345+12345'
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    apiKeys: {
+                        googleMapsFull: data.googleMapsFull
+                    },
+                    apiKeysLoaded: true
+                }, () => {
+                    fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=${this.state.apiKeys.googleMapsFull}`, {
+                        method: 'post',
+                        headers: { 'Content-Type': 'application/json' }
+                    })
+                        .then(res => res.json())
+                        .then(res => this.setState({
+                            center: {
+                                lat: res.location.lat,
+                                lng: res.location.lng
+                            }
+                        }))
+                        .catch(console.log);
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
     }
 
     handleChange = (event) => {
@@ -57,17 +106,56 @@ class ApartmentFinder extends Component {
             }
         })
             .then(response => response.json())
-            .then(response => this.setState({ places: response.property }))
+            .then(response => {
+                if (response.property.length) {
+                    const { latitude, longitude } = response.property[0].location;
+                    const center = {
+                        lat: Number.parseFloat(latitude),
+                        lng: Number.parseFloat(longitude)
+                    };
+                    return this.setState({
+                        places: response.property,
+                        center: center
+                    })
+                }
+                return this.setState({
+                    error: {
+                        code: 5,
+                        message: 'No results found'
+                    }
+                })
+            })
             .catch(err => console.log('Something went wrong fetching properties'));
-        console.log('submitted');
+    }
+
+    handleSelection = (id) => {
+        // take unique identifier
+        // filter through places
+        // grab selected long/lat
+        // setState for center
+        // these 3 variables can be gotten rid of by combining
+        const selected = this.state.places.filter(p => p.identifier.obPropId === id)
+        const { latitude, longitude } = selected[0].location;
+        const center = {
+            lat: Number.parseFloat(latitude),
+            lng: Number.parseFloat(longitude)
+        }
+        this.setState({ center })
     }
 
     loadPlaces = (places) => {
         const results = places.map(place => {
             const { oneLine } = place.address;
             return (
-                <div className='apartment-finder-individual-results-container' key={place.identifier.obPropId}>
-                    <div className='results-container'>
+                <div
+                    className='apartment-finder-individual-results-container'
+                    key={place.identifier.obPropId}
+                >
+                    <div
+
+                        onClick={() => this.handleSelection(place.identifier.obPropId)}
+                        className='results-container'
+                    >
                         <div className='results-image'><img src="#" alt="" /></div>
                         <div className='results-address-full'>
                             {oneLine}
@@ -97,13 +185,16 @@ class ApartmentFinder extends Component {
 
                 <div className='apartment-finder-results-to-display-container'>
                     <div className='apartment-finder-map-results-container'>
-                        {/* <Map
+                        <Map
+                            places={this.state.places}
+                            loaded={this.state.apiKeysLoaded}
                             isMarkerShown
-                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                            loadingElement={<div style={{ height: `100%` }} />}
+                            location={this.state.center}
+                            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDKAlopzZGCKPxVvhlgXOf8RhoYIeezb9I&v=3.exp&libraries=geometry,drawing,places`}
                             containerElement={<div style={{ height: `400px` }} />}
-                            mapElement={<div style={{ height: `100%` }} />}
-                        /> */}
+                            loadingElement={<div style={{ height: '100%', width: '100%' }} />}
+                            mapElement={<div style={{ height: `100%`, width: '100%' }} />}
+                        />
                     </div>
                 </div>
 
