@@ -96,36 +96,38 @@ class ApartmentFinder extends Component {
         this.setState({ [name]: value });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        fetch(`https://search.onboard-apis.com/propertyapi/v1.0.0/property/address?postalcode=${this.state.search}&propertytype=APARTMENT&page=1&pagesize=20`, {
-            method: 'get',
-            headers: {
-                'Accept': 'application/json',
-                'apikey': '216a286caf9ec8435f1b49e09a31207c'
-            }
-        })
-            .then(response => response.json())
-            .then(response => {
-                if (response.property.length) {
-                    const { latitude, longitude } = response.property[0].location;
-                    const center = {
-                        lat: Number.parseFloat(latitude),
-                        lng: Number.parseFloat(longitude)
-                    };
-                    return this.setState({
-                        places: response.property,
-                        center: center
-                    })
+        try {
+            let response = await fetch(`https://search.onboard-apis.com/propertyapi/v1.0.0/property/address?postalcode=${this.state.search}&propertytype=APARTMENT&page=1&pagesize=20`, {
+                method: 'get',
+                headers: {
+                    'Accept': 'application/json',
+                    'apikey': '216a286caf9ec8435f1b49e09a31207c'
                 }
-                return this.setState({
-                    error: {
-                        code: 5,
-                        message: 'No results found'
-                    }
-                })
             })
-            .catch(err => console.log('Something went wrong fetching properties'));
+            let data = await response.json();
+            if (data.property.length && data.status.code === 0) {
+                const { latitude, longitude } = data.property[0].location;
+                const center = {
+                    lat: Number.parseFloat(latitude),
+                    lng: Number.parseFloat(longitude)
+                };
+                return this.setState({
+                    places: data.property,
+                    center: center
+                })
+            }
+            return this.setState({
+                error: {
+                    code: 5,
+                    message: 'No results found'
+                }
+            })
+        }
+        catch (e) {
+            console.log('Something went wrong');
+        }
     }
 
     handleSelection = (id) => {
