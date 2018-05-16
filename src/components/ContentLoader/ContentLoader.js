@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BasicProfile from '../BasicProfile/BasicProfile';
 import ContactProfile from '../ContactProfile/ContactProfile';
-import AccountProfile from '../AccountProfile/AccountProfile';
+import AccountProfile from '../Profile/AccountProfile/AccountProfile';
 import PersonalProfile from '../PersonalProfile/PersonalProfile';
 
 const ContentLoader = ({ route, user }) => {
