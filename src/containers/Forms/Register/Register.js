@@ -139,7 +139,7 @@ class Register extends Component {
         this.props.onSignIn(user);
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
         if (this.state.isValidForm && this.state.agree) {
             let user = {
@@ -157,16 +157,18 @@ class Register extends Component {
                 verify: this.state.verify,
                 agree: this.state.agree,
             }
-            fetch('http://localhost:3000/register', {
-                method: 'post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(user),
-            })
-                .then(response => response.json())
-                .then(user => {
-                    this.props.onSignIn(user)
+            try {
+                let request = await fetch('http://localhost:3000/register', {
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(user),
                 })
-                .catch(err => console.log('something went wrong sending to server'));
+                let response = await request.json();
+                this.handleSignIn(response);
+                console.log(response);
+            } catch (error) {
+                console.log('something went wrong sending to server');
+            }
         }
         else {
             alert('You must fill out the form in order to submit this form');

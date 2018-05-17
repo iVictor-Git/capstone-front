@@ -101,21 +101,24 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
         if (this.state.isValidForm) {
             const credentials = {
                 email: this.state.email,
                 password: this.state.password
             }
-            fetch('http://localhost:3000/login', {
-                method: 'post',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(credentials)
-            })
-                .then(response => response.json())
-                .then(user => this.handleSignIn(user))
-                .catch(err => console.log(err));
+            try {
+                let request = await fetch('http://localhost:3000/login', {
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(credentials)
+                })
+                let response = await request.json();
+                this.handleSignIn(response);
+            } catch (error) {
+                console.log('Could not sign in');
+            }
         }
     }
 
