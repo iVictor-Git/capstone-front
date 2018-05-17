@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from '../Map/Map';
+import classes from './ApartmentFinder.css';
 
 // IMPORTANT -> functionality works, just need a better place to grab data.
 
@@ -172,37 +173,39 @@ class ApartmentFinder extends Component {
     render() {
         // const {api_keys} = this.props;
         return (
-            <div className='apartment-finder-component-container container'>
-                <div className='apartment-finder-title-container'>
-                    <h1>Apartment search</h1>
-                </div>
-                <div className='apartment-finder-search-container'>
-                    <form action="" onSubmit={this.handleSubmit}>
-                        <div className='form-group search-input-container'>
-                            <input className='form-control' onChange={this.handleChange} type="text" name='search' placeholder='Enter a zip code' />
-                        </div>
-                        {/* <AutoComplete api_keys={api_keys}/> */}
-                    </form>
-                </div>
-
-                <div className='apartment-finder-results-to-display-container'>
-                    <div className='apartment-finder-map-results-container'>
-                        <Map
-                            places={this.state.places}
-                            loaded={this.state.apiKeysLoaded}
-                            isMarkerShown
-                            location={this.state.center}
-                            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDKAlopzZGCKPxVvhlgXOf8RhoYIeezb9I&v=3.exp&libraries=geometry,drawing,places`}
-                            containerElement={<div style={{ height: `400px` }} />}
-                            loadingElement={<div style={{ height: '100%', width: '100%' }} />}
-                            mapElement={<div style={{ height: `100%`, width: '100%' }} />}
-                        />
+            <div className={classes.ApartmentFinder}>
+                <div className={classes.Container}>
+                    <div className='apartment-finder-title-container'>
+                        <h1>Apartment search</h1>
                     </div>
-                </div>
+                    <div className='apartment-finder-search-container'>
+                        <form action="" onSubmit={this.handleSubmit}>
+                            <div className='form-group search-input-container'>
+                                <input className={classes.Search} onChange={this.handleChange} type="text" name='search' placeholder='Enter a zip code' />
+                            </div>
+                            {/* <AutoComplete api_keys={api_keys}/> */}
+                        </form>
+                    </div>
 
-                <div className='apartment-finder-search-results-container'>
-                    <div className='apartment-finder-list-results-container'>
-                        {this.loadPlaces(this.state.places)}
+                    <div className='apartment-finder-results-to-display-container'>
+                        <div className='apartment-finder-map-results-container'>
+                            <Map
+                                places={this.state.places}
+                                loaded={this.state.apiKeysLoaded}
+                                isMarkerShown
+                                location={this.state.center}
+                                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDKAlopzZGCKPxVvhlgXOf8RhoYIeezb9I&v=3.exp&libraries=geometry,drawing,places`}
+                                containerElement={<div style={{ height: `400px` }} />}
+                                loadingElement={<div style={{ height: '100%', width: '100%' }} />}
+                                mapElement={<div style={{ height: `100%`, width: '100%' }} />}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='apartment-finder-search-results-container'>
+                        <div className='apartment-finder-list-results-container'>
+                            {this.loadPlaces(this.state.places)}
+                        </div>
                     </div>
                 </div>
             </div>
