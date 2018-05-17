@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import classes from './Body.css';
 // import Home from './Home/Home';
-import Register from '../../../containers/Forms/Register/Register';
+// import Register from '../../../containers/Forms/Register/Register';
 import Login from '../../../containers/Forms/Login/Login';
 // import Chat from '../../Chat/Chat';
-import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
+// import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
 // import Profile from '../../Profile/Profile';
 // import { defaultUserProfile } from '../../../const/const';
 
@@ -30,10 +30,10 @@ class Body extends Component {
         return (
             <div className={classes.Body}>
                 {/* <Home /> */}
-                <Register onSignIn={handleSignIn} />
+                {/* <Register onSignIn={handleSignIn} /> */}
                 <Login onSignIn={handleSignIn} />
                 {/* <Chat user={this.props.user} /> */}
-                <ApartmentFinder />
+                {/* <ApartmentFinder /> */}
                 {/* <Profile
                     user={defaultUserProfile}
                 // user={this.props.user}

@@ -1,7 +1,6 @@
 .Login {
     width: 100vw;
     height: auto;
-    margin-top: 25vh;
     /* background-color: rgba(31, 126, 174, 0.673); */
 }
 
@@ -14,6 +13,7 @@
 }
 
 .Container {
+    margin-top: 25vh;
     background-color: #fff;
     border-radius: 15px;
     box-sizing: border-box;
