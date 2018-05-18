@@ -9,38 +9,136 @@ class ApartmentFinder extends Component {
         super(props);
         this.state = {
             search: '',
-            places: [{
-                "identifier": {
-                    "obPropId": "16370081112103",
-                    "fips": "12103",
-                    "apn": "353016089280030060",
-                    "apnOrig": "353016089280030060"
+            places: [
+                {
+                    "identifier": {
+                        "obPropId": "16370081112103",
+                        "fips": "12103",
+                        "apn": "353016089280030060",
+                        "apnOrig": "353016089280030060"
+                    },
+                    "address": {
+                        "country": "US",
+                        "countrySubd": "FL",
+                        "line1": "2766 62ND AVE N",
+                        "line2": "SAINT PETERSBURG, FL 33702",
+                        "locality": "Saint Petersburg",
+                        "matchCode": "ExaStr",
+                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
+                        "postal1": "33702",
+                        "postal2": "6372",
+                        "postal3": "C014"
+                    },
+                    "location": {
+                        "accuracy": "Street",
+                        "elevation": 0,
+                        "latitude": "27.828256",
+                        "longitude": "-82.670902",
+                        "distance": 0,
+                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                    },
+                    "vintage": {
+                        "lastModified": "2018-1-24",
+                        "pubDate": "2018-2-7"
+                    }
                 },
-                "address": {
-                    "country": "US",
-                    "countrySubd": "FL",
-                    "line1": "2766 62ND AVE N",
-                    "line2": "SAINT PETERSBURG, FL 33702",
-                    "locality": "Saint Petersburg",
-                    "matchCode": "ExaStr",
-                    "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
-                    "postal1": "33702",
-                    "postal2": "6372",
-                    "postal3": "C014"
+                {
+                    "identifier": {
+                        "obPropId": "16370081112104",
+                        "fips": "12103",
+                        "apn": "353016089280030060",
+                        "apnOrig": "353016089280030060"
+                    },
+                    "address": {
+                        "country": "US",
+                        "countrySubd": "FL",
+                        "line1": "2766 62ND AVE N",
+                        "line2": "SAINT PETERSBURG, FL 33702",
+                        "locality": "Saint Petersburg",
+                        "matchCode": "ExaStr",
+                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
+                        "postal1": "33702",
+                        "postal2": "6372",
+                        "postal3": "C014"
+                    },
+                    "location": {
+                        "accuracy": "Street",
+                        "elevation": 0,
+                        "latitude": "27.828256",
+                        "longitude": "-82.670902",
+                        "distance": 0,
+                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                    },
+                    "vintage": {
+                        "lastModified": "2018-1-24",
+                        "pubDate": "2018-2-7"
+                    }
                 },
-                "location": {
-                    "accuracy": "Street",
-                    "elevation": 0,
-                    "latitude": "27.828256",
-                    "longitude": "-82.670902",
-                    "distance": 0,
-                    "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                {
+                    "identifier": {
+                        "obPropId": "16370081112105",
+                        "fips": "12103",
+                        "apn": "353016089280030060",
+                        "apnOrig": "353016089280030060"
+                    },
+                    "address": {
+                        "country": "US",
+                        "countrySubd": "FL",
+                        "line1": "2766 62ND AVE N",
+                        "line2": "SAINT PETERSBURG, FL 33702",
+                        "locality": "Saint Petersburg",
+                        "matchCode": "ExaStr",
+                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
+                        "postal1": "33702",
+                        "postal2": "6372",
+                        "postal3": "C014"
+                    },
+                    "location": {
+                        "accuracy": "Street",
+                        "elevation": 0,
+                        "latitude": "27.828256",
+                        "longitude": "-82.670902",
+                        "distance": 0,
+                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                    },
+                    "vintage": {
+                        "lastModified": "2018-1-24",
+                        "pubDate": "2018-2-7"
+                    }
                 },
-                "vintage": {
-                    "lastModified": "2018-1-24",
-                    "pubDate": "2018-2-7"
+                {
+                    "identifier": {
+                        "obPropId": "16370081112106",
+                        "fips": "12103",
+                        "apn": "353016089280030060",
+                        "apnOrig": "353016089280030060"
+                    },
+                    "address": {
+                        "country": "US",
+                        "countrySubd": "FL",
+                        "line1": "2766 62ND AVE N",
+                        "line2": "SAINT PETERSBURG, FL 33702",
+                        "locality": "Saint Petersburg",
+                        "matchCode": "ExaStr",
+                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
+                        "postal1": "33702",
+                        "postal2": "6372",
+                        "postal3": "C014"
+                    },
+                    "location": {
+                        "accuracy": "Street",
+                        "elevation": 0,
+                        "latitude": "27.828256",
+                        "longitude": "-82.670902",
+                        "distance": 0,
+                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
+                    },
+                    "vintage": {
+                        "lastModified": "2018-1-24",
+                        "pubDate": "2018-2-7"
+                    }
                 }
-            }],
+            ],
             apiKeys: {
                 googleMapsFull: ''
             },
@@ -151,12 +249,11 @@ class ApartmentFinder extends Component {
             const { oneLine } = place.address;
             return (
                 <div
-                    className='apartment-finder-individual-results-container'
+                    className={classes.Result}
                     key={place.identifier.obPropId}
+                    onClick={() => this.handleSelection(place.identifier.obPropId)}
                 >
                     <div
-
-                        onClick={() => this.handleSelection(place.identifier.obPropId)}
                         className='results-container'
                     >
                         <div className='results-image'><img src="#" alt="" /></div>
@@ -178,34 +275,30 @@ class ApartmentFinder extends Component {
                     <div className='apartment-finder-title-container'>
                         <h1>Apartment search</h1>
                     </div>
-                    <div className='apartment-finder-search-container'>
-                        <form action="" onSubmit={this.handleSubmit}>
-                            <div className='form-group search-input-container'>
-                                <input className={classes.Search} onChange={this.handleChange} type="text" name='search' placeholder='Enter a zip code' />
-                            </div>
-                            {/* <AutoComplete api_keys={api_keys}/> */}
-                        </form>
-                    </div>
-
-                    <div className='apartment-finder-results-to-display-container'>
-                        <div className='apartment-finder-map-results-container'>
-                            <Map
-                                places={this.state.places}
-                                loaded={this.state.apiKeysLoaded}
-                                isMarkerShown
-                                location={this.state.center}
-                                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDKAlopzZGCKPxVvhlgXOf8RhoYIeezb9I&v=3.exp&libraries=geometry,drawing,places`}
-                                containerElement={<div style={{ height: `400px` }} />}
-                                loadingElement={<div style={{ height: '100%', width: '100%' }} />}
-                                mapElement={<div style={{ height: `100%`, width: '100%' }} />}
-                            />
+                    {/* <div className='apartment-finder-search-container'> */}
+                    <form action="" onSubmit={this.handleSubmit}>
+                        <div className='form-group search-input-container'>
+                            <input className={classes.Search} onChange={this.handleChange} type="text" name='search' placeholder='Enter a zip code' />
                         </div>
-                    </div>
+                        {/* <AutoComplete api_keys={api_keys}/> */}
+                    </form>
+                    {/* </div> */}
 
-                    <div className='apartment-finder-search-results-container'>
-                        <div className='apartment-finder-list-results-container'>
-                            {this.loadPlaces(this.state.places)}
-                        </div>
+                    <Map
+                        places={this.state.places}
+                        loaded={this.state.apiKeysLoaded}
+                        isMarkerShown
+                        location={this.state.center}
+                        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDKAlopzZGCKPxVvhlgXOf8RhoYIeezb9I&v=3.exp&libraries=geometry,drawing,places`}
+                        containerElement={<div className={classes.MapContainer} />}
+                        loadingElement={<div className={classes.MapLoading} />}
+                        mapElement={<div className={classes.Map} />}
+                    />
+                </div>
+
+                <div className={classes.Results}>
+                    <div className='apartment-finder-list-results-container'>
+                        {this.loadPlaces(this.state.places)}
                     </div>
                 </div>
             </div>

@@ -1,104 +1,94 @@
-.apartment-finder-list-results-container {
-    margin: 0 auto;
-    height: 93%;
-    width: 90%;
+.ApartmentFinder {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Container, .Results {
+    width: 70%;
+}
+
+.Search {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+.Search:focus {
+    box-shadow: 0 0 0 1px rgba(59, 199, 159, 1)
+}
+
+.MapContainer {
+    height: 425px;
+}
+
+.MapLoading {
+    height: 100%;
+}
+
+.Map {
+    height: 100%;
+    width: 100%;
+}
+
+.Results {
+    height: 150px;
+    margin: 15px auto 0 auto;
     border-top: 1px solid black;
     border-left: 1px solid black;
     /* background-color: darkmagenta; */
     overflow-y: auto;
     overflow-x: hidden;
 }
-.apartment-finder-list-results-container::-webkit-scrollbar {
+
+.Result {
+    border-bottom: 1px solid black;
+}
+
+.Results::-webkit-scrollbar {
     width: 10px;
 }
     
-.apartment-finder-list-results-container::-webkit-scrollbar-track {
+.Results::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px 2px rgba(0,0,0,0.3); 
     border-radius: 10px;
 }
     
-.apartment-finder-list-results-container::-webkit-scrollbar-thumb {
+.Results::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
-.ApartmentFinder {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
+@media (min-width: 769px) {
+    .ApartmentFinder {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+    }
+    
+    .MapContainer {
+        height: 600px;
+    }
+    
+    .Container {
+        width: 50%;
+    }
+
+    .Results {
+        width: 30%;
+        height: auto;
+        min-height: 250px;
+        max-height: 450px;
+    }
+
+    .Container, .Results {
+        margin: 0; /* reset margin */
+        margin-left: 50px;
+    }
+
 }
 
-.Container {
-    width: 72%;
-    margin-right: 100px;
-}
-
-.Search {
-    width: 100%;
-    padding: 5px;
-
-}
-div.Loader {
-  font-size: 10px;
-  margin: 50px auto;
-  text-indent: -9999em;
-  width: auto;
-  height: 100%;
-  border-radius: 50%;
-  background: #ffffff;
-  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255,255,255, 0) 42%);
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255,255,255, 0) 42%);
-  background: -o-linear-gradient(left, #ffffff 10%, rgba(255,255,255, 0) 42%);
-  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255,255,255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255,255,255, 0) 42%);
-  position: relative;
-  -webkit-animation: load3 1.4s infinite linear;
-  animation: load3 1.4s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.Loader:before {
-  width: 50%;
-  height: 50%;
-  background: #ffffff;
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-}
-.Loader:after {
-  background: #ffffff;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-  content: '';
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
