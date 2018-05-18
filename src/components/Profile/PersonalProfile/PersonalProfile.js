@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../Title/Title';
-import PersonalProfileInformation from '../PersonalProfileInformation/PersonalProfileInformation';
+import Title from '../../Title/Title';
+import PersonalProfileInformation from './PersonalProfileInformation/PersonalProfileInformation';
 
 const AccountProfile = ({ address, address2, city, state, zip }) => {
     return (
@@ -16,7 +16,7 @@ const AccountProfile = ({ address, address2, city, state, zip }) => {
                 city={city}
                 state={state}
                 zip={zip}
-                />
+            />
         </React.Fragment>
     )
 }

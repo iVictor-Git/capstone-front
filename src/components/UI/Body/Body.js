@@ -4,9 +4,9 @@ import classes from './Body.css';
 // import Register from '../../../containers/Forms/Register/Register';
 // import Login from '../../../containers/Forms/Login/Login';
 // import Chat from '../../Chat/Chat';
-import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
-// import Profile from '../../Profile/Profile';
-// import { defaultUserProfile } from '../../../const/const';
+// import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
+import Profile from '../../Profile/Profile';
+import { defaultUserProfile } from '../../../const/const';
 
 
 class Body extends Component {
@@ -33,11 +33,11 @@ class Body extends Component {
                 {/* <Register onSignIn={handleSignIn} /> */}
                 {/* <Login onSignIn={handleSignIn} /> */}
                 {/* <Chat user={this.props.user} /> */}
-                <ApartmentFinder />
-                {/* <Profile
+                {/* <ApartmentFinder /> */}
+                <Profile
                     user={defaultUserProfile}
                 // user={this.props.user}
-                /> */}
+                />
             </div >
         )
     }

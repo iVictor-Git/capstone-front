@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../Title/Title';
-import AccountProfileInformation from '../AccountProfileInformation/AccountProfileInformation';
+import Title from '../../Title/Title';
+import AccountProfileInformation from './AccountProfileInformation/AccountProfileInformation';
 
 const AccountProfile = ({ email, password }) => {
     return (
@@ -13,7 +13,7 @@ const AccountProfile = ({ email, password }) => {
                 className='profile-component-information-group-container'
                 email={email}
                 password={password}
-                />
+            />
         </React.Fragment>
     )
 }

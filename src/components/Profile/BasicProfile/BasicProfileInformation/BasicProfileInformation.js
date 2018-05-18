@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileField from '../ProfileField/ProfileField';
+import ProfileField from '../../ProfileField/ProfileField';
 
 const BasicProfileInformation = ({ className, first, last, birthday }) => {
     return (
@@ -9,7 +9,7 @@ const BasicProfileInformation = ({ className, first, last, birthday }) => {
             <ProfileField value={last} name={'Last'} />
             <ProfileField value={birthday} name={'Birthday'} />
         </div>
-)
+    )
 }
 
 export default BasicProfileInformation;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileField from '../ProfileField/ProfileField';
+import ProfileField from '../../ProfileField/ProfileField';
 
 const AccountProfileInformation = ({ className, address, address2, city, state, zip }) => {
     return (

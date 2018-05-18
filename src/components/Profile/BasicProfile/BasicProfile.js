@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../Title/Title';
-import BasicProfileInformation from '../BasicProfileInformation/BasicProfileInformation';
+import Title from '../../Title/Title';
+import BasicProfileInformation from './BasicProfileInformation/BasicProfileInformation';
 
 const BasicProfile = ({ first, last, birthday }) => {
     return (

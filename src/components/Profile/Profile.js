@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Profile.css';
 import Title from '../Title/Title';
-import Avatar from '../Avatar/Avatar';
+import Avatar from './Avatar/Avatar';
 import ContentManager from '../ContentManager/ContentManager';
 import ContentLoader from '../ContentLoader/ContentLoader';
 
@@ -15,13 +15,13 @@ class Profile extends Component {
     }
 
     handleContentChange = (event) => {
-        this.setState({route: event.target.name}, () => {
+        this.setState({ route: event.target.name }, () => {
             console.log(this.state.route);
         })
     }
 
     render() {
-        
+
         return (
 
             <div className='profile-component-container container'>
@@ -31,10 +31,10 @@ class Profile extends Component {
                 {/* This is a component => Avatar */}
                 <Avatar image={''} />
 
-                <ContentManager onContentChange={this.handleContentChange}/>
+                <ContentManager onContentChange={this.handleContentChange} />
 
                 {/* This is a loaded container */}
-                <ContentLoader route={this.state.route} user={this.state.user}/>
+                <ContentLoader route={this.state.route} user={this.state.user} />
             </div>
         )
     }
