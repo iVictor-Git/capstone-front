@@ -1,5 +1,5 @@
-.profile-component-avatar-container {
-    height: 30%;
+.Avatar {
+    height: 200px;
     /* background-color: blue; */
     display: flex;
     justify-content: center;
@@ -9,13 +9,8 @@
     border-bottom: 1px solid black;
 }
 
-.profile-avatar-img-container {
-    height: 200px;
-    width: 200px;
+.Container {
     background-color: blueviolet;
-}
-
-.profile-avatar-img-container {
-    height: 200px;
-    width: 200px;
+    width: 150px;
+    height: 150px;
 }

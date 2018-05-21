@@ -1,14 +1,14 @@
 import React from 'react';
-import './ContentManager.css';
+import classes from './ContentManager.css';
 
 const ContentManager = ({ onContentChange }) => {
     return (
-        <div className='profile-component-information-container'>
+        <div className={classes.ContentManager}>
             {/*  These are going to be components */}
-            <button className='profile-component-information-type-container' name='basic' onClick={onContentChange}>Basic</button>
-            <button className='profile-component-information-type-container' name='contact' onClick={onContentChange}>Contact</button>
-            <button className='profile-component-information-type-container' name='personal' onClick={onContentChange}>Personal</button>
-            <button className='profile-component-information-type-container' name='other' onClick={onContentChange}>Other</button>
+            <button className={classes.Button} name='basic' onClick={onContentChange}>Basic</button>
+            <button className={classes.Button} name='contact' onClick={onContentChange}>Contact</button>
+            <button className={classes.Button} name='personal' onClick={onContentChange}>Personal</button>
+            <button className={classes.Button} name='other' onClick={onContentChange}>Other</button>
         </div>
     )
 }

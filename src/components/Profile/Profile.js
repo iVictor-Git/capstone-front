@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Profile.css';
+import classes from './Profile.css';
 import Title from '../Title/Title';
 import Avatar from './Avatar/Avatar';
 import ContentManager from '../ContentManager/ContentManager';
@@ -24,17 +24,18 @@ class Profile extends Component {
 
         return (
 
-            <div className='profile-component-container container'>
+            <div className={classes.Profile}>
+                <div className={classes.Container}>
+                    <Title value='Profile' className={classes.Title} />
 
-                <Title value='Profile' className='component-title-container' />
+                    {/* This is a component => Avatar */}
+                    <Avatar image={''} />
 
-                {/* This is a component => Avatar */}
-                <Avatar image={''} />
+                    <ContentManager onContentChange={this.handleContentChange} />
 
-                <ContentManager onContentChange={this.handleContentChange} />
-
-                {/* This is a loaded container */}
-                <ContentLoader route={this.state.route} user={this.state.user} />
+                    {/* This is a loaded container */}
+                    <ContentLoader route={this.state.route} user={this.state.user} />
+                </div>
             </div>
         )
     }
