@@ -1,10 +1,10 @@
 import React from 'react';
-import './Avatar.css';
+import classes from './Avatar.css';
 
 const Avatar = ({ image }) => {
     return (
-        <div className='profile-component-avatar-container' >
-            <div className='profile-avatar-img-container'>
+        <div className={classes.Avatar} >
+            <div className={classes.Container}>
                 <img src="" alt="" />
             </div>
         </div >

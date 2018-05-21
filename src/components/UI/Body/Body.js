@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import classes from './Body.css';
-// import Home from './Home/Home';
+import Home from './Home/Home';
 // import Register from '../../../containers/Forms/Register/Register';
 // import Login from '../../../containers/Forms/Login/Login';
 // import Chat from '../../Chat/Chat';
 // import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
-import Profile from '../../Profile/Profile';
-import { defaultUserProfile } from '../../../const/const';
+// import Profile from '../../Profile/Profile';
+// import { defaultUserProfile } from '../../../const/const';
 
 
 class Body extends Component {
@@ -29,15 +29,16 @@ class Body extends Component {
         const { handleSignIn } = this;
         return (
             <div className={classes.Body}>
-                {/* <Home /> */}
+                <Home />
                 {/* <Register onSignIn={handleSignIn} /> */}
                 {/* <Login onSignIn={handleSignIn} /> */}
                 {/* <Chat user={this.props.user} /> */}
                 {/* <ApartmentFinder /> */}
-                <Profile
+
+                {/* This will not be shown */}
+                {/* <Profile
                     user={defaultUserProfile}
-                // user={this.props.user}
-                />
+                // user={this.props.user} */}
             </div >
         )
     }

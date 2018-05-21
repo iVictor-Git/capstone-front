@@ -30,18 +30,26 @@ div.article-item-container.row {
 }
 
 .Article {
+}
+
+.Row {
     display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
 }
 
-.Article div {
-    width: 100%;
+.Image, .Content {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
 }
 
-.Article .Content {
-    height: auto;
-    height: 65%;
-    width: 35%;
+.Content {
+
 }
+
+
+
 
 
 

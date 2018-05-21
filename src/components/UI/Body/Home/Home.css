@@ -1,16 +1,29 @@
 @media(max-width: 992px) {
-    .Home, .slightAdjustment {
+    .Home, .Title {
         width: 66%;
         float: left;
     }
+
+    .Title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Content {
+        position: relative;
+        top: 25px;
+        float: left;
+    }
+
 }
 
-.slighterAdjustment > *  {
+.Content > *  {
     margin: 0 7.5vw;
     margin-bottom: 25px;
 }
 
-.slighterAdjustment h4, button, .center {
+.Content h4, button, .center {
     display: flex;
     justify-content: center;
 }
@@ -39,13 +52,12 @@ button:hover {
         color: rgba(0, 150, 255, .75);
     }
 
-    .slightAdjustment {
+    .Title {
         padding-top: 15px;
-        padding-left: 85px;
+        padding-left: 55px;
     }
 
-    .slighterAdjustment {
-        padding-top: 25px;      
+    .Content {
     }
 
 }

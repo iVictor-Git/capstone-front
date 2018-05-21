@@ -1,11 +1,19 @@
-.profile-component-information-type-container {
+.ContentManager {
     background-color: white;
     /* border: none; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Button {
+    margin-top: 5px;
+    background-color: #ddd;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    border: none;
 }
 
-.profile-component-information-type-container:hover {
-    background-color: gray; 
+.Button:hover {
+    background-color: rgba(88, 88, 88, 0.681); 
 }
