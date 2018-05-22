@@ -4,6 +4,8 @@ import EmailInput from '../FormPieces/EmailInput/EmailInput';
 import PasswordInput from '../FormPieces/PasswordInput/PasswordInput';
 import validator from 'validator';
 
+import { Link } from 'react-router-dom';
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -134,6 +136,13 @@ class Login extends Component {
 
         return (
             <div className={classes.Login}>
+                <div className={classes.Register}>
+                    <Link className={classes.Link} to={{
+                        pathname: '/register'
+                    }}>
+                        <p>I need an account, please?</p>
+                    </Link>
+                </div>
                 <div className={classes.Container}>
 
                     <div className={classes.Title}>

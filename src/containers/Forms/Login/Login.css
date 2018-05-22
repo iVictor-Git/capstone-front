@@ -2,6 +2,19 @@
     width: 100vw;
     height: auto;
     /* background-color: rgba(31, 126, 174, 0.673); */
+    display: flex;
+    flex-direction: column;
+}
+
+.Register {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+}
+
+.Register p {
+    margin: 0;    
 }
 
 .Title {
@@ -39,6 +52,10 @@
         width: 80%;
         height: auto;
     }
+
+    .Register {
+        padding-top: 0;
+    }    
 
     .Title {
         padding-top: 10px;

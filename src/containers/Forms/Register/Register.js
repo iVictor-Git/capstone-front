@@ -11,6 +11,8 @@ import { errorsRegisterInitialState } from '../../../const/const';
 import validator from 'validator';
 import { states } from '../../../const/const';
 
+import { Link } from 'react-router-dom';
+
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -183,6 +185,15 @@ class Register extends Component {
 
         return (
             <div className={classes.Register}>
+                <div className={classes.Login}>
+                    <Link className={classes.Link} to={{
+                        pathname: '/login'
+                    }}>
+                        <p>
+                            Already have an account?
+                        </p>
+                    </Link>
+                </div>
                 <div className={classes.Container}>
                     <div className={classes.Title}>
                         <h1>Register</h1>

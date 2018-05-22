@@ -13,6 +13,7 @@ class App extends Component {
       user: {
         id: '',
         name: '',
+        isLoggedIn: false,
       },
 
     }
@@ -22,7 +23,8 @@ class App extends Component {
     this.setState({
       user: {
         id: user.id,
-        name: `${user.firstname} ${user.lastname}`
+        name: `${user.firstname} ${user.lastname}`,
+        isLoggedIn: true
       }
     })
     // console.log(`User loaded: ${this.state.user.name}`)

@@ -1,11 +1,22 @@
-.Register {
-    height: auto;
-}
 
 .Title, .Register, .Submit {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Register {
+    height: auto;
+    flex-direction: column;
+}
+
+
+.Register div.Login {
+    margin: 0;
+    padding: 15px;
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Container {
@@ -59,6 +70,14 @@ cursor: not-allowed;
         width: 100vw;
         background-color: rgba(31, 126, 174, 0.673);
         padding: 25px 0;  
+    }
+
+    .Register div.Login {
+        padding-top: 0;
+    }    
+
+    .Link {
+        color: white;
     }
 
     .Register .Container {
