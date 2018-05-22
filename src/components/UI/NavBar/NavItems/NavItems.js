@@ -2,15 +2,13 @@ import React from 'react';
 import classes from './NavItems.css';
 import NavBarItem from '../NavBarItem/NavBarItem';
 import NavItem from '../../SideDrawer/NavItem/NavItem';
+import { navigationLinks } from '../../../../const/const';
 
 
 const NavItems = (props) => {
-    let navOptions = null;
-    if (props.options !== undefined) {
-        navOptions = props.options.map((option, index) => {
-            return <NavItem key={index} name={option} />
-        })
-    }
+    let navOptions = navigationLinks.map((option, index) => {
+        return <NavItem key={index} name={option.name} route={option.route} />
+    })
 
     return (
         <div className={classes.NavItems}>

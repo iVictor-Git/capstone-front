@@ -2,22 +2,12 @@
     width: 0;
 }
 
-
-.article-container {
-    width: 90%;
-    /* display: inherit; */
-    /* flex-direction: inherit; */
-    height: 88vh;
-    /* border: 1px solid black; */
-    margin-top: 2vh;
-    /* margin-left: 0.4vw;     */
-}
 .ArticleList {
     display: inherit;
     /* width: 93%; */
     flex-direction: inherit;
     justify-content: space-between;
-    height: 80.5vh;
+    height: 58vh;
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid black;
@@ -25,4 +15,10 @@
 
 .articles::-webkit-scrollbar {
     width: 0;
+}
+
+@media(min-width:1200px) {
+    .ArticleList {
+        height: 70.25vh;
+    }
 }

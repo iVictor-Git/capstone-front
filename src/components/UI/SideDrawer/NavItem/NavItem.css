@@ -1,12 +1,14 @@
 .NavItem {
     font-size: 20px;
     padding: 16px 32px;
+    color: black;
 }
 .NavItem:hover {
-    background-color: rgba(23, 103, 169, 0.831);
+    background-color: rgba(37, 113, 175, 0.831);
     padding-bottom: 13px;
     border-bottom: 3px solid  rgba(255, 255, 255, 0.631);
     cursor: pointer;
+    color: white;
 
 }
 

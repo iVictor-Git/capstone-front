@@ -1,11 +1,18 @@
 import React from 'react';
 import classes from './NavItem.css';
+import { Link } from 'react-router-dom';
 
-const NavItem = ({ name }) => {
+const NavItem = (props) => {
     return (
-        <div className={classes.NavItem}>
-            {name}
-        </div>
+        <Link className={classes.NavItem}
+            to={{
+                pathname: props.route
+            }}
+        >
+            <div>
+                {props.name}
+            </div>
+        </Link>
     )
 }
 

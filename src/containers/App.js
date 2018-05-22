@@ -4,6 +4,8 @@ import classes from './App.css';
 import Body from '../components/UI/Body/Body';
 import NavBar from '../components/UI/NavBar/NavBar';
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +29,10 @@ class App extends Component {
   }
 
   render() {
-    const navOptions = ['Home', 'About', 'Contact', 'Services', 'Products', 'Career', 'Help']
-
     return (
       <div className={classes.App}>
-        <NavBar options={navOptions} />
-        <SideDrawer options={navOptions} />
+        <NavBar />
+        <SideDrawer />
         <Body
           onSignIn={this.loadUser}
           user={this.state.user}

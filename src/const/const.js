@@ -138,7 +138,33 @@ const defaultUserProfile = {
         state: 'Florida',
         zip: '12345'
     }
-
 }
 
-export { errorsRegisterInitialState, states, defaultUserProfile };
+const navigationLinks = [
+    {
+        name: 'Home',
+        route: '/'
+    },
+    {
+        name: 'About',
+        route: '/construction'
+    },
+    {
+        name: 'Services',
+        route: '/construction'
+    },
+    {
+        name: 'Products',
+        route: '/construction'
+    },
+    {
+        name: 'Career',
+        route: '/construction'
+    },
+    {
+        name: 'Help',
+        route: '/construction'
+    }
+]
+
+export { errorsRegisterInitialState, states, defaultUserProfile, navigationLinks };
