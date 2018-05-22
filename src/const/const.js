@@ -164,6 +164,10 @@ const navigationLinks = [
     {
         name: 'Help',
         route: '/construction'
+    },
+    {
+        name: 'Logout',
+        route: '/logout'
     }
 ]
 
