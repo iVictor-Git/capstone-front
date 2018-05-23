@@ -58,8 +58,6 @@ class Map extends Component {
         else {
             places = null;
         }
-        const center = {
-        }
 
         let map = (
             <GoogleMap

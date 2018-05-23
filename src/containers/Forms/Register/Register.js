@@ -11,7 +11,7 @@ import { errorsRegisterInitialState } from '../../../const/const';
 import validator from 'validator';
 import { states } from '../../../const/const';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Register extends Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Register extends Component {
             address: '',
             address2: '',
             city: '',
-            state: states[0],
+            state: '',
             zip: '',
             area: '',
             number: '',
@@ -32,7 +32,15 @@ class Register extends Component {
             agree: false,
             errors: errorsRegisterInitialState,
             isValidForm: false,
+            server: {
+                hasError: false,
+                message: '',
+            }
         }
+    }
+
+    componentDidMount() {
+        this.setState({ state: states[0] })
     }
 
     // set errors
@@ -99,7 +107,7 @@ class Register extends Component {
     handleDataValidation = (name) => {
         const errors = errorsRegisterInitialState;
 
-        if (name === 'address2') return;
+        if (name === 'address2' || name === 'state') return;
         if (name === 'password' || name === 'verify' || name === 'email') {
             if (name === 'password' || name === 'verify') {
                 this.validatePassword(errors, name);
@@ -166,8 +174,17 @@ class Register extends Component {
                     body: JSON.stringify(user),
                 })
                 let response = await request.json();
-                this.handleSignIn(response);
-                console.log(response);
+                if (response.code && response.type === 'error') {
+                    return this.setState(() => {
+                        return {
+                            server: {
+                                hasError: true,
+                                message: response.message
+                            }
+                        }
+                    })
+                }
+                return this.handleSignIn(response);
             } catch (error) {
                 console.log('something went wrong sending to server');
             }
@@ -197,6 +214,7 @@ class Register extends Component {
                 <div className={classes.Container}>
                     <div className={classes.Title}>
                         <h1>Register</h1>
+                        <p>{this.state.server.hasError ? this.state.server.message : null}</p>
                     </div>
                     <div className={classes.Form}>
                         <form className='' onSubmit={this.handleSubmit}>
@@ -248,6 +266,13 @@ class Register extends Component {
                                 </div>
                             </div>
                         </form>
+                        {this.props.authenticated ?
+                            <Redirect
+                                to={{
+                                    pathname: '/'
+                                }}
+                                push
+                            /> : null}
                     </div>
                 </div>
             </div>

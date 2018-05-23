@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './NavItems.css';
-import NavBarItem from '../NavBarItem/NavBarItem';
 import NavItem from '../../SideDrawer/NavItem/NavItem';
 import { navigationLinks } from '../../../../const/const';
 

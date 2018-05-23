@@ -4,7 +4,7 @@ import EmailInput from '../FormPieces/EmailInput/EmailInput';
 import PasswordInput from '../FormPieces/PasswordInput/PasswordInput';
 import validator from 'validator';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -24,7 +24,11 @@ class Login extends Component {
                     message: ''
                 },
             },
-            isValidForm: false
+            isValidForm: false,
+            server: {
+                hasError: false,
+                message: '',
+            }
 
         }
     }
@@ -117,8 +121,25 @@ class Login extends Component {
                     body: JSON.stringify(credentials)
                 })
                 let response = await request.json();
-                this.handleSignIn(response);
+                console.log(response);
+                if (response.code && response.type === 'error') {
+                    return this.setState(() => {
+                        return {
+                            server: {
+                                hasError: true,
+                                message: response.message
+                            }
+                        }
+                    })
+                }
+                return this.handleSignIn(response);
             } catch (error) {
+                this.setState({
+                    server: {
+                        hasError: true,
+                        message: error.message
+                    }
+                })
                 console.log('Could not sign in');
             }
         }
@@ -147,6 +168,7 @@ class Login extends Component {
 
                     <div className={classes.Title}>
                         <h1>Login</h1>
+                        <p>{this.state.server.hasError ? this.state.server.message : null}</p>
                     </div>
                     <div>
                         <div className={classes.Form}>
@@ -167,6 +189,13 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
+                {this.props.authenticated ?
+                    <Redirect
+                        to={{
+                            pathname: '/'
+                        }}
+                        push
+                    /> : null}
             </div>
         )
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import InputRow from '../InputRow/InputRow';
-import classes from '../FormPieces.css';
 
 const EmailInput = ({ onChange, errors, autofocus }) => {
 

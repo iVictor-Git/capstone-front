@@ -22,7 +22,7 @@ class SideDrawer extends Component {
                 <Backdrop show={this.state.show} click={this.toggleHander} />
                 <Toggle click={this.toggleHander} />
                 <nav className={[classes.SideDrawer, show].join(' ')}>
-                    <NavItemList options={this.props.options} />
+                    <NavItemList options={this.props.options} authenticated={this.props.authenticated} />
                 </nav>
             </React.Fragment>
         )
