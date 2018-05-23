@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './Carousel.css';
 import firstFriend from './friends4.jpg';
 import secondFriend from './friends2.jpg';
 import thirdFriend from './friends3.jpg';

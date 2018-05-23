@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Map from '../Map/Map';
 import classes from './ApartmentFinder.css';
+import { Redirect } from 'react-router-dom';
 
 // IMPORTANT -> functionality works, just need a better place to grab data.
 
@@ -10,134 +11,7 @@ class ApartmentFinder extends Component {
         this.state = {
             search: '',
             places: [
-                {
-                    "identifier": {
-                        "obPropId": "16370081112103",
-                        "fips": "12103",
-                        "apn": "353016089280030060",
-                        "apnOrig": "353016089280030060"
-                    },
-                    "address": {
-                        "country": "US",
-                        "countrySubd": "FL",
-                        "line1": "2766 62ND AVE N",
-                        "line2": "SAINT PETERSBURG, FL 33702",
-                        "locality": "Saint Petersburg",
-                        "matchCode": "ExaStr",
-                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
-                        "postal1": "33702",
-                        "postal2": "6372",
-                        "postal3": "C014"
-                    },
-                    "location": {
-                        "accuracy": "Street",
-                        "elevation": 0,
-                        "latitude": "27.828256",
-                        "longitude": "-82.670902",
-                        "distance": 0,
-                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
-                    },
-                    "vintage": {
-                        "lastModified": "2018-1-24",
-                        "pubDate": "2018-2-7"
-                    }
-                },
-                {
-                    "identifier": {
-                        "obPropId": "16370081112104",
-                        "fips": "12103",
-                        "apn": "353016089280030060",
-                        "apnOrig": "353016089280030060"
-                    },
-                    "address": {
-                        "country": "US",
-                        "countrySubd": "FL",
-                        "line1": "2766 62ND AVE N",
-                        "line2": "SAINT PETERSBURG, FL 33702",
-                        "locality": "Saint Petersburg",
-                        "matchCode": "ExaStr",
-                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
-                        "postal1": "33702",
-                        "postal2": "6372",
-                        "postal3": "C014"
-                    },
-                    "location": {
-                        "accuracy": "Street",
-                        "elevation": 0,
-                        "latitude": "27.828256",
-                        "longitude": "-82.670902",
-                        "distance": 0,
-                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
-                    },
-                    "vintage": {
-                        "lastModified": "2018-1-24",
-                        "pubDate": "2018-2-7"
-                    }
-                },
-                {
-                    "identifier": {
-                        "obPropId": "16370081112105",
-                        "fips": "12103",
-                        "apn": "353016089280030060",
-                        "apnOrig": "353016089280030060"
-                    },
-                    "address": {
-                        "country": "US",
-                        "countrySubd": "FL",
-                        "line1": "2766 62ND AVE N",
-                        "line2": "SAINT PETERSBURG, FL 33702",
-                        "locality": "Saint Petersburg",
-                        "matchCode": "ExaStr",
-                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
-                        "postal1": "33702",
-                        "postal2": "6372",
-                        "postal3": "C014"
-                    },
-                    "location": {
-                        "accuracy": "Street",
-                        "elevation": 0,
-                        "latitude": "27.828256",
-                        "longitude": "-82.670902",
-                        "distance": 0,
-                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
-                    },
-                    "vintage": {
-                        "lastModified": "2018-1-24",
-                        "pubDate": "2018-2-7"
-                    }
-                },
-                {
-                    "identifier": {
-                        "obPropId": "16370081112106",
-                        "fips": "12103",
-                        "apn": "353016089280030060",
-                        "apnOrig": "353016089280030060"
-                    },
-                    "address": {
-                        "country": "US",
-                        "countrySubd": "FL",
-                        "line1": "2766 62ND AVE N",
-                        "line2": "SAINT PETERSBURG, FL 33702",
-                        "locality": "Saint Petersburg",
-                        "matchCode": "ExaStr",
-                        "oneLine": "2766 62ND AVE N, SAINT PETERSBURG, FL 33702",
-                        "postal1": "33702",
-                        "postal2": "6372",
-                        "postal3": "C014"
-                    },
-                    "location": {
-                        "accuracy": "Street",
-                        "elevation": 0,
-                        "latitude": "27.828256",
-                        "longitude": "-82.670902",
-                        "distance": 0,
-                        "geoid": "CO12103,CS1293042,DB1201560,MT30003675,PL1239775,RS0000605488,SB0000079356,SB0000079362,SB0000079358,ZI33702"
-                    },
-                    "vintage": {
-                        "lastModified": "2018-1-24",
-                        "pubDate": "2018-2-7"
-                    }
-                }
+
             ],
             apiKeys: {
                 googleMapsFull: ''
@@ -301,6 +175,10 @@ class ApartmentFinder extends Component {
                         {this.loadPlaces(this.state.places)}
                     </div>
                 </div>
+
+                {!this.props.authenticated ? <Redirect to={{
+                    pathname: '/login'
+                }} /> : null}
             </div>
         )
     }

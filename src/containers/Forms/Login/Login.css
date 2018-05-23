@@ -13,12 +13,25 @@
     padding-top: 15px;
 }
 
+.Title, .Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Register p {
     margin: 0;    
+    margin-top: 10px;
 }
 
 .Title {
     padding: 10px;
+    flex-direction: column;
+}
+
+.Title p {
+    color: red;
+    font-size: 13px;
 }
 
 .Title > * {
@@ -35,11 +48,6 @@
     width: 70%;
 }
 
-.Title, .Login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
 
 .Submit {
     margin: 0 auto;

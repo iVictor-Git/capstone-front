@@ -21,7 +21,7 @@ const errorsRegisterInitialState = {
     },
     state: {
         field: '*State',
-        isNotValid: true,
+        isNotValid: false,
         message: ''
     },
     zip: {
@@ -150,12 +150,12 @@ const navigationLinks = [
         route: '/construction'
     },
     {
-        name: 'Services',
-        route: '/construction'
+        name: 'Chat',
+        route: '/chat'
     },
     {
-        name: 'Products',
-        route: '/construction'
+        name: 'Search',
+        route: '/search'
     },
     {
         name: 'Career',
@@ -165,10 +165,7 @@ const navigationLinks = [
         name: 'Help',
         route: '/construction'
     },
-    {
-        name: 'Logout',
-        route: '/logout'
-    }
+
 ]
 
 export { errorsRegisterInitialState, states, defaultUserProfile, navigationLinks };

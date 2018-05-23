@@ -20,24 +20,41 @@ class App extends Component {
   }
 
   loadUser = (user) => {
-    this.setState({
-      user: {
-        id: user.id,
-        name: `${user.firstname} ${user.lastname}`,
-        isLoggedIn: true
+    if (user.id) {
+      this.setState({
+        user: {
+          id: user.id,
+          name: `${user.firstname} ${user.lastname}`,
+          isLoggedIn: true
+        }
+      })
+    }
+    // console.log(`User loaded: ${this.state.user.name}`)
+  }
+
+  handleSignOut = () => {
+    this.setState((prevState) => {
+      if (prevState.user.isLoggedIn) {
+        return {
+          user: {
+            id: '',
+            name: '',
+            isLoggedIn: false
+          }
+        }
       }
     })
-    // console.log(`User loaded: ${this.state.user.name}`)
   }
 
   render() {
     return (
-      <div className={classes.App}>
+      <div className={classes.App} >
         <NavBar />
-        <SideDrawer />
+        <SideDrawer authenticated={this.state.user.isLoggedIn} />
         <Body
           onSignIn={this.loadUser}
           user={this.state.user}
+          onSignOut={this.handleSignOut}
         />
       </div>
     );

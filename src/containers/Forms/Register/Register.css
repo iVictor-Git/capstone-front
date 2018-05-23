@@ -5,6 +5,16 @@
     align-items: center;
 }
 
+.Title {
+    flex-direction: column;
+}
+
+.Title p {
+    font-size: 13px;
+    color: red;
+    margin: 0;
+}
+
 .Register {
     height: auto;
     flex-direction: column;
@@ -13,7 +23,7 @@
 
 .Register div.Login {
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     width: 95%;
     display: flex;
     justify-content: flex-end;
@@ -69,7 +79,7 @@ cursor: not-allowed;
         height: auto;
         width: 100vw;
         background-color: rgba(31, 126, 174, 0.673);
-        padding: 25px 0;  
+        padding: 10px 0;  
     }
 
     .Register div.Login {

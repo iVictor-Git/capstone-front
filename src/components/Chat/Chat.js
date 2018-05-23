@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Chat.css';
 import ChatMessageList from './ChatMessageList/ChatMessageList';
 import NavBar from '../UI/NavBar/NavBar';
+import { Redirect } from 'react-router-dom';
 
 class Chat extends Component {
     constructor(props) {
@@ -104,6 +105,10 @@ class Chat extends Component {
                         </form>
                     </div>
                 </div>
+
+                {!this.props.user.isLoggedIn ? <Redirect to={{
+                    pathname: '/login'
+                }} /> : null}
             </div>
         )
     }

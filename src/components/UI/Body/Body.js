@@ -7,6 +7,7 @@ import Chat from '../../Chat/Chat';
 import ApartmentFinder from '../../../containers/ApartmentFinder/ApartmentFinder';
 // import Profile from '../../Profile/Profile';
 // import { defaultUserProfile } from '../../../const/const';
+import Logout from '../../../containers/Logout/Logout'
 
 import { Route } from 'react-router-dom';
 
@@ -27,6 +28,10 @@ class Body extends Component {
         this.props.onSignIn(user)
     }
 
+    handleSignOut = () => {
+        this.props.onSignOut();
+    }
+
     render() {
         const { handleSignIn } = this;
         return (
@@ -37,12 +42,12 @@ class Body extends Component {
                 />
 
                 <Route path="/register" exact render={() => {
-                    return <Register onSignIn={handleSignIn} />
+                    return <Register onSignIn={handleSignIn} authenticated={this.props.user.isLoggedIn} />
                 }}
                 />
 
                 <Route path="/login" exact render={() => {
-                    return <Login onSignIn={handleSignIn} />
+                    return <Login onSignIn={handleSignIn} authenticated={this.props.user.isLoggedIn} />
                 }}
                 />
 
@@ -52,7 +57,7 @@ class Body extends Component {
                 />
 
                 <Route path="/search" exact render={() => {
-                    return <ApartmentFinder />
+                    return <ApartmentFinder authenticated={this.props.user.isLoggedIn} />
                 }}
                 />
 
@@ -61,10 +66,14 @@ class Body extends Component {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        height: '75vh'
+                        height: '100vh'
                     }}>This page is under construction...</h3>
                 }}
                 />
+
+                <Route path="/logout" exact render={() => {
+                    return <Logout signOut={this.handleSignOut} authenticated={this.props.user.isLoggedIn} />
+                }} />
                 {/* This will not be shown */}
                 {/* <Profile
                     user={defaultUserProfile}
