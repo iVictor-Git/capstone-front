@@ -16,7 +16,11 @@ class Chat extends Component {
             },
             messages: [],
         }
+    }
 
+    componentDidMount() {
+        const authenticated = this.props.user.isLoggedIn;
+        if (!authenticated) return;
         fetch('http://localhost:3000/api/chat/load', {
             method: 'get',
             headers: { 'Content-Type': 'application/json' }

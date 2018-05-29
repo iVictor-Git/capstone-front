@@ -29,6 +29,8 @@ class ApartmentFinder extends Component {
     }
 
     componentDidMount() {
+        if (!this.props.authenticated) return;
+
         fetch(`http://localhost:3000/`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
